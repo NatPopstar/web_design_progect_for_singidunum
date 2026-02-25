@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalia's Birds — Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="gallery.css" />
+  <link rel="icon" href="/html_css_only/logo1.png">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <input type="checkbox" id="navToggle" class="nav__checkbox" />
+    <label for="navToggle" class="nav__label" aria-label="Открыть меню">
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+    </label>
+    <ul class="nav__menu" role="list">
+      <li><a class="nav__link" href="index.html">About Us</a></li>
+      <li><a class="nav__link nav__link--active" href="gallery.html">Gallery</a></li>
+      <li><a class="nav__link" href="portfolio.html">Portfolio</a></li>
+      <li><a class="nav__link" href="blog.html">Blog</a></li>
+      <li><a class="nav__link" href="location.html">Location</a></li>
+      <li><a class="nav__link" href="video-gallery.html">Video Gallery</a></li>
+      <li><a class="nav__link" href="index.html#contacts">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header__inner">
+      <h1 class="page-header__title">Our Gallery</h1>
+      <p class="page-header__subtitle">Счастливые лица наших клиентов со всего мира.</p>
+    </div>
+  </header>
+
+  <main class="gallery-layout">
+
+    <!-- Photos grid -->
+    <section class="gallery-photos" aria-label="Photo gallery">
+      <h2 class="gallery-section__heading">Фотографии</h2>
+      <div class="photo-grid">
+        <figure class="photo-grid__item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Somnus_NZ.jpg/1200px-Somnus_NZ.jpg" alt="New Zealand mountains" />
+        </figure>
+        <figure class="photo-grid__item">
+          <img src="https://img.freepik.com/premium-photo/tropical-beach-with-palm-trees-blue-sky_948735-126290.jpg" alt="Tropical beach" />
+        </figure>
+        <figure class="photo-grid__item photo-grid__item--wide">
+          <img src="https://img.freepik.com/premium-psd/mountain-river_1189612-685.jpg?semt=ais_hybrid&w=740" alt="Scotland landscape" />
+        </figure>
+        <figure class="photo-grid__item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Marina_Bay_Sands_Singapore_Night.JPG/1280px-Marina_Bay_Sands_Singapore_Night.JPG" alt="Singapore Marina Bay" />
+        </figure>
+        <figure class="photo-grid__item">
+          <img src="https://i.ytimg.com/vi/59zD5UD2t4A/maxresdefault.jpg" alt="Canadian Rockies" />
+        </figure>  
+      </div>
+      <a class="btn btn--outline gallery-all-link" href="all-photos.html">Смотреть все фото →</a>
+    </section>
+
+    <!-- Reviews -->
+    <section class="gallery-reviews" aria-label="Customer reviews">
+      <h2 class="gallery-section__heading">Отзывы клиентов</h2>
+
+      <div class="reviews-list">
+
+        <article class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="20" fill="rgb(202 140 152)"/><circle cx="20" cy="15" r="7" fill="rgb(241 220 205)"/><ellipse cx="20" cy="35" rx="12" ry="8" fill="rgb(241 220 205)"/></svg>
+            </div>
+            <span class="review-card__name">Наташа</span>
+          </div>
+          <div class="review-card__stars" aria-label="5 из 5">★★★★★</div>
+          <p class="review-card__text">Летела с мужем на Мальдивы — всё прошло как в сказке! Места были зарезервированы заранее, нас встретили с улыбками.</p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="20" fill="rgb(123 88 113)"/><circle cx="20" cy="15" r="7" fill="rgb(241 220 205)"/><ellipse cx="20" cy="35" rx="12" ry="8" fill="rgb(241 220 205)"/></svg>
+            </div>
+            <span class="review-card__name">Маша</span>
+          </div>
+          <div class="review-card__stars" aria-label="5 из 5">★★★★★</div>
+          <p class="review-card__text">Летела первый раз одна в Барселону и очень боялась. Благодаря Natalia's Birds всё оказалось элементарным!</p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="20" fill="rgb(84 98 127)"/><circle cx="20" cy="15" r="7" fill="rgb(241 220 205)"/><ellipse cx="20" cy="35" rx="12" ry="8" fill="rgb(241 220 205)"/></svg>
+            </div>
+            <span class="review-card__name">Даша</span>
+          </div>
+          <div class="review-card__stars" aria-label="5 из 5">★★★★★</div>
+          <p class="review-card__text">Летели компанией в Дубай, и ни один из нас не остался без места. Отдельное спасибо за внимательность!</p>
+        </article>
+
+      </div>
+
+      <a class="btn btn--outline gallery-review-btn" href="leave-review.html">✍️ Оставить отзыв</a>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; Natalia's Birds</p>
+      <ul class="footer__phones">
+        <li><a class="footer__phone" href="tel:+38111123456">📞 +381 11 123-456</a></li>
+        <li><a class="footer__phone" href="tel:+38111234567">📞 +381 11 234-567</a></li>
+        <li><a class="footer__phone" href="tel:+38111345678">📞 +381 11 345-678</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+/* Blog pagen */
+
+.blog-layout {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 4rem) 1.5rem;
+  display: grid;
+  grid-template-columns: 220px 1fr 260px;
+  grid-template-areas: "left center right";
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Sidebars */
+.blog-sidebar--left  { grid-area: left; }
+.blog-feed           { grid-area: center; display: flex; flex-direction: column; gap: 1.5rem; }
+.blog-sidebar--right { grid-area: right; }
+
+.sidebar-widget {
+  background: var(--clr-sand);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-widget__heading {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--clr-plum);
+  margin-bottom: 1rem;
+}
+
+/* Recent list */
+.recent-list { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.recent-list__item { display: flex; flex-direction: column; gap: 0.2rem; }
+
+.recent-list__link {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--clr-slate);
+  line-height: 1.4;
+  transition: color var(--transition);
+}
+
+.recent-list__link:hover { color: var(--clr-plum); }
+
+.recent-list__date {
+  font-size: 0.7rem;
+  color: var(--clr-rose);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+/* Article card */
+.article-card {
+  background: var(--clr-white);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.article-card__meta {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  align-items: center;
+}
+
+.article-card__author {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--clr-rose);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.article-card__date {
+  font-size: 0.75rem;
+  color: var(--clr-slate);
+}
+
+.article-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  color: var(--clr-plum);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.article-card__stars {
+  color: var(--clr-rose);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.article-card__excerpt {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--clr-slate);
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .blog-layout {
+    grid-template-columns: 1fr 240px;
+    grid-template-areas:
+      "center right"
+      "left   left";
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: "center" "right" "left";
+  }
+}
+/* Post form */
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.post-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.post-form__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-plum);
+}
+
+.post-form__input,
+.post-form__textarea {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--clr-text);
+  background: var(--clr-blush);
+  border: 1.5px solid var(--clr-rose);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.75rem;
+  width: 100%;
+  resize: vertical;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.post-form__input:focus,
+.post-form__textarea:focus {
+  outline: none;
+  border-color: var(--clr-plum);
+  box-shadow: 0 0 0 3px rgba(123 88 113 / 0.15);
+}
+
+.post-form__upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1.1rem;
+  background: var(--clr-blush);
+  border: 2px dashed var(--clr-rose);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.post-form__upload:hover {
+  border-color: var(--clr-plum);
+  background: rgba(241 220 205 / 0.5);
+}
+
+.post-form__upload-input { display: none; }
+.post-form__upload-icon  { font-size: 1.5rem; }
+
+.post-form__upload-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--clr-plum);
+}
+
+.post-form__upload-hint {
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: var(--clr-slate);
+}
+
+.post-form__submit { width: 100%; text-align: center; }

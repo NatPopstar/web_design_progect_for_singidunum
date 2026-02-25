@@ -1,0 +1,228 @@
+/* Main wrapper */
+.portfolio-main {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 1.5rem;
+}
+
+/* Grid 3*3 */
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Destination card */
+.destination-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  outline: none;
+
+  /* smooth lift on focus / hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover,
+.destination-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(84 98 127 / 0.25);
+}
+
+/* focus ring for keyboard users */
+.destination-card:focus-visible {
+  outline: 3px solid var(--clr-rose);
+  outline-offset: 3px;
+}
+
+/* Image wrapper — fixed aspect ratio */
+.destination-card__img-wrapper {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--clr-slate);
+}
+
+.destination-card__img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.destination-card:hover .destination-card__img-wrapper img,
+.destination-card:focus-visible .destination-card__img-wrapper img {
+  transform: scale(1.07);
+}
+
+/* Country label strip */
+.destination-card__label {
+  background: linear-gradient(135deg, var(--clr-plum), var(--clr-slate));
+  color: var(--clr-sand);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.65rem 1rem;
+}
+
+/* Backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(84 98 127 / 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  /* hidden state */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal */
+.modal {
+  background: var(--clr-blush);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(84 98 127 / 0.35);
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-backdrop.is-open .modal {
+  transform: translateY(0);
+}
+
+/* Close button */
+.modal__close {
+  position: sticky;
+  top: 0;
+  float: right;
+  margin: 0.75rem 0.75rem 0 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--clr-rose);
+  color: var(--clr-white);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.modal__close:hover {
+  background: var(--clr-plum);
+  transform: rotate(90deg);
+}
+
+/* Modal body */
+.modal__body {
+  padding: 0 1.75rem 1.75rem;
+  clear: both;
+}
+
+.modal__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 600;
+  color: var(--clr-plum);
+  margin-bottom: 0.75rem;
+}
+
+.modal__description {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--clr-slate);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* Cities list */
+.modal__cities-heading,
+.modal__map-heading {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-plum);
+  margin-bottom: 0.6rem;
+}
+
+.modal__cities-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal__cities-list li {
+  background: rgb(255 232 216);
+  border: 1px solid var(--clr-rose);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--clr-slate);
+}
+
+/* Map */
+.modal__map-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.modal__map {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Reserve button */
+.modal__reserve {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal__body {
+    padding: 0 1.1rem 1.1rem;
+  }
+}

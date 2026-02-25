@@ -1,0 +1,49 @@
+/* ========================================================
+   video-gallery.css
+   Only styles that are NEW for video-gallery.html.
+   The grid, cards, modal backdrop and modal shell are
+   already covered by portfolio.css — no duplication here.
+   ======================================================== */
+
+/* ---- Play-button overlay on each card ---- */
+.destination-card__play-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  color: rgba(255 255 255 / 0);
+  text-shadow: 0 2px 12px rgba(0 0 0 / 0.4);
+  transition: color var(--transition);
+  pointer-events: none;
+}
+
+.destination-card:hover .destination-card__play-icon,
+.destination-card:focus-visible .destination-card__play-icon {
+  color: rgba(255 255 255 / 0.9);
+}
+
+/* ---- Video modal: wider than the portfolio modal ---- */
+.video-modal {
+  max-width: 800px;
+}
+
+/* ---- 16:9 responsive iframe wrapper ---- */
+.video-modal__embed-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #000;
+  margin-top: 1.25rem;
+}
+
+.video-modal__iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

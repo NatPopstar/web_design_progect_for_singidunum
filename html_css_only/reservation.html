@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalia's Birds — Резервирование</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="reservation.css" />
+  <link rel="icon" href="/html_css_only/logo1.png">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <input type="checkbox" id="navToggle" class="nav__checkbox" />
+    <label for="navToggle" class="nav__label" aria-label="Открыть меню">
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+    </label>
+    <ul class="nav__menu" role="list">
+      <li><a class="nav__link" href="index.html">About Us</a></li>
+      <li><a class="nav__link" href="gallery.html">Gallery</a></li>
+      <li><a class="nav__link" href="portfolio.html">Portfolio</a></li>
+      <li><a class="nav__link" href="blog.html">Blog</a></li>
+      <li><a class="nav__link" href="location.html">Location</a></li>
+      <li><a class="nav__link" href="video-gallery.html">Video Gallery</a></li>
+      <li><a class="nav__link" href="index.html#contacts">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header__inner">
+      <h1 class="page-header__title">Резервирование билетов</h1>
+      <p class="page-header__subtitle">Выберите направление, место и пассажиров — мы гарантируем ваше место на борту.</p>
+    </div>
+  </header>
+
+  <main class="res-main">
+
+    <!-- Progress indicator -->
+    <div class="res-progress" aria-label="Шаги оформления">
+      <div class="res-progress__step res-progress__step--done">
+        <div class="res-progress__dot">1</div>
+        <span class="res-progress__label">Направление</span>
+      </div>
+      <div class="res-progress__line"></div>
+      <div class="res-progress__step res-progress__step--done">
+        <div class="res-progress__dot">2</div>
+        <span class="res-progress__label">Места</span>
+      </div>
+      <div class="res-progress__line"></div>
+      <div class="res-progress__step res-progress__step--active">
+        <div class="res-progress__dot">3</div>
+        <span class="res-progress__label">Пассажиры</span>
+      </div>
+      <div class="res-progress__line"></div>
+      <div class="res-progress__step">
+        <div class="res-progress__dot">4</div>
+        <span class="res-progress__label">Оплата</span>
+      </div>
+    </div>
+
+    <!-- STEP 1: Destination -->
+    <section class="res-step" id="step-destination">
+      <h2 class="res-step__heading">Шаг 1 — Направление</h2>
+      <div class="res-fields">
+        <div class="res-field">
+          <label class="res-field__label" for="country">Страна назначения</label>
+          <select class="res-field__select" id="country">
+            <option>— выберите страну —</option>
+            <option>США</option>
+            <option>Канада</option>
+            <option>Ирландия</option>
+            <option>Англия</option>
+            <option>Австралия</option>
+            <option>Новая Зеландия</option>
+            <option>Мальта</option>
+            <option>Сингапур</option>
+            <option>Шотландия</option>
+          </select>
+        </div>
+        <div class="res-field">
+          <label class="res-field__label" for="city">Город</label>
+          <select class="res-field__select" id="city">
+            <option>— сначала выберите страну —</option>
+          </select>
+        </div>
+        <div class="airline-card">
+          <span class="airline-card__icon">✈️</span>
+          <div>
+            <p class="airline-card__label">Авиакомпания</p>
+            <p class="airline-card__name">Air Serbia + Delta Air Lines</p>
+          </div>
+        </div>
+      </div>
+      <div class="placeholder" style="margin-top:1.5rem;">
+        <div class="placeholder__icon">⚙️</div>
+        <p class="placeholder__title">Динамический выбор города</p>
+        <p>В интерактивной версии города подгружаются автоматически после выбора страны.</p>
+      </div>
+    </section>
+
+    <!-- STEP 2: Seat map -->
+    <section class="res-step" id="step-seats">
+      <h2 class="res-step__heading">Шаг 2 — Выбор мест</h2>
+      <p class="res-step__hint">Зелёные места (ряды 5–10) — наш пул. Серые — заняты. Остальные — не входят в наш пул.</p>
+
+      <div class="seatmap-wrap">
+        <div class="seatmap">
+
+          <!-- Column headers -->
+          <div class="seatmap__row">
+            <div class="seatmap__spacer"></div>
+            <div class="seatmap__col-lbl">A</div>
+            <div class="seatmap__col-lbl">B</div>
+            <div class="seatmap__col-lbl">C</div>
+            <div class="seatmap__aisle"></div>
+            <div class="seatmap__col-lbl">D</div>
+            <div class="seatmap__col-lbl">E</div>
+            <div class="seatmap__col-lbl">F</div>
+          </div>
+
+          <!-- Rows 1-4: not our pool -->
+          <div class="seatmap__row"><div class="seatmap__row-lbl">1</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">2</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">3</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">4</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+
+          <!-- Rows 5-10: our pool -->
+          <div class="seatmap__row seatmap__row--ours"><div class="seatmap__row-lbl">5</div><div class="seat seat--taken"></div><div class="seat seat--available"></div><div class="seat seat--available"></div><div class="seatmap__aisle"></div><div class="seat seat--available"></div><div class="seat seat--available"></div><div class="seat seat--available"></div></div>
+          <div class="seatmap__row seatmap__row--ours"><div class="seatmap__row-lbl">6</div><div class="seat seat--available"></div><div class="seat seat--available"></div><div class="seat seat--taken"></div><div class="seatmap__aisle"></div><div class="seat seat--available"></div><div class="seat seat--available"></div><div class="seat seat--available"></div></div>
+          <div class="seatmap__row seatmap__row--ours"><div class="seatmap__row-lbl">7</div><div class="seat seat--selected"></div><div class="seat seat--available"></div><div class="seat seat--available"></div><div class="seatmap__aisle"></div><div class="seat seat--available"></div><div class="seat seat--available"></div><div class="seat seat--taken"></div></div>
+          <div class="seatmap__row seatmap__row--ours"><div class="seatmap__row-lbl">8</div><div class="seat seat--available"></div><div class="seat seat--taken"></div><div class="seat seat--available"></div><div class="seatmap__aisle"></div><div class="seat seat--available"></div><div class="seat seat--available"></div><div class="seat seat--available"></div></div>
+          <div class="seatmap__row seatmap__row--ours"><div class="seatmap__row-lbl">9</div><div class="seat seat--available"></div><div class="seat seat--available"></div><div class="seat seat--available"></div><div class="seatmap__aisle"></div><div class="seat seat--taken"></div><div class="seat seat--available"></div><div class="seat seat--available"></div></div>
+          <div class="seatmap__row seatmap__row--ours"><div class="seatmap__row-lbl">10</div><div class="seat seat--taken"></div><div class="seat seat--available"></div><div class="seat seat--available"></div><div class="seatmap__aisle"></div><div class="seat seat--available"></div><div class="seat seat--taken"></div><div class="seat seat--available"></div></div>
+
+          <!-- Rows 11-20: not our pool -->
+          <div class="seatmap__row"><div class="seatmap__row-lbl">11</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">12</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">13</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">14</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">15</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">16</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">17</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">18</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">19</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+          <div class="seatmap__row"><div class="seatmap__row-lbl">20</div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seatmap__aisle"></div><div class="seat seat--other"></div><div class="seat seat--other"></div><div class="seat seat--other"></div></div>
+
+        </div>
+
+        <div class="seatmap-legend">
+          <span class="legend-item legend-item--available">Доступно</span>
+          <span class="legend-item legend-item--selected">Выбрано</span>
+          <span class="legend-item legend-item--taken">Занято</span>
+          <span class="legend-item legend-item--other">Не наш пул</span>
+        </div>
+      </div>
+
+      <div class="placeholder" style="margin-top:1.5rem;">
+        <div class="placeholder__icon">⚙️</div>
+        <p class="placeholder__title">Интерактивный выбор мест</p>
+        <p>В интерактивной версии нажмите на зелёное место, чтобы выбрать его.</p>
+      </div>
+    </section>
+
+    <!-- STEP 3: Passengers -->
+    <section class="res-step" id="step-passengers">
+      <h2 class="res-step__heading">Шаг 3 — Данные пассажиров</h2>
+
+      <div class="passenger-block">
+        <h3 class="passenger-block__title">Пассажир 1 — место 7A</h3>
+        <div class="passenger-block__grid">
+          <div class="res-field">
+            <label class="res-field__label" for="p1name">Имя</label>
+            <input class="res-field__input" id="p1name" type="text" placeholder="Имя" />
+          </div>
+          <div class="res-field">
+            <label class="res-field__label" for="p1last">Фамилия</label>
+            <input class="res-field__input" id="p1last" type="text" placeholder="Фамилия" />
+          </div>
+          <div class="res-field">
+            <label class="res-field__label" for="p1pass">Номер паспорта</label>
+            <input class="res-field__input" id="p1pass" type="text" placeholder="AB 1234567" />
+          </div>
+          <div class="res-field">
+            <label class="res-field__label" for="p1dob">Дата рождения</label>
+            <input class="res-field__input" id="p1dob" type="date" />
+          </div>
+        </div>
+      </div>
+
+      <div class="placeholder">
+        <div class="placeholder__icon">⚙️</div>
+        <p class="placeholder__title">Динамические блоки пассажиров</p>
+        <p>В интерактивной версии появляется по одному блоку на каждое выбранное место.</p>
+      </div>
+    </section>
+
+    <!-- STEP 4: Payment -->
+    <section class="res-step" id="step-payment">
+      <h2 class="res-step__heading">Шаг 4 — Способ оплаты</h2>
+
+      <div class="payment-grid">
+        <label class="payment-card payment-card--selected">
+          <input type="radio" name="payment" checked class="payment-card__radio" />
+          <span class="payment-card__icon">🏦</span>
+          <span class="payment-card__name">Raiffeisen Bank</span>
+        </label>
+        <label class="payment-card">
+          <input type="radio" name="payment" class="payment-card__radio" />
+          <span class="payment-card__icon">💳</span>
+          <span class="payment-card__name">Revolut</span>
+        </label>
+        <label class="payment-card">
+          <input type="radio" name="payment" class="payment-card__radio" />
+          <span class="payment-card__icon">🥝</span>
+          <span class="payment-card__name">QIWI</span>
+        </label>
+        <label class="payment-card">
+          <input type="radio" name="payment" class="payment-card__radio" />
+          <span class="payment-card__icon">🅿️</span>
+          <span class="payment-card__name">PayPal</span>
+        </label>
+      </div>
+
+      <!-- Summary -->
+      <div class="booking-summary">
+        <div class="booking-summary__row"><span>Направление</span><span>США — Нью-Йорк</span></div>
+        <div class="booking-summary__row"><span>Авиакомпания</span><span>Air Serbia + Delta</span></div>
+        <div class="booking-summary__row"><span>Места</span><span>7A</span></div>
+        <div class="booking-summary__row"><span>Пассажиров</span><span>1</span></div>
+        <div class="booking-summary__row"><span>Цена за место</span><span>620 EUR</span></div>
+        <div class="booking-summary__row booking-summary__row--total"><span>Итого</span><span>620 EUR</span></div>
+      </div>
+
+      <a class="btn btn--primary res-reserve-btn" href="#">Зарезервировать ✓</a>
+
+      <div class="placeholder" style="margin-top:1.5rem;">
+        <div class="placeholder__icon">⚙️</div>
+        <p class="placeholder__title">Логика оплаты и резервирования</p>
+        <p>В интерактивной версии кнопка активируется после выбора способа оплаты.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; Natalia's Birds</p>
+      <ul class="footer__phones">
+        <li><a class="footer__phone" href="tel:+38111123456">📞 +381 11 123-456</a></li>
+        <li><a class="footer__phone" href="tel:+38111234567">📞 +381 11 234-567</a></li>
+        <li><a class="footer__phone" href="tel:+38111345678">📞 +381 11 345-678</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

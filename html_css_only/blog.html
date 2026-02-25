@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalia's Birds — Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="blog.css" />
+  <link rel="icon" href="/html_css_only/logo1.png">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <input type="checkbox" id="navToggle" class="nav__checkbox" />
+    <label for="navToggle" class="nav__label" aria-label="Открыть меню">
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+    </label>
+    <ul class="nav__menu" role="list">
+      <li><a class="nav__link" href="index.html">About Us</a></li>
+      <li><a class="nav__link" href="gallery.html">Gallery</a></li>
+      <li><a class="nav__link" href="portfolio.html">Portfolio</a></li>
+      <li><a class="nav__link nav__link--active" href="blog.html">Blog</a></li>
+      <li><a class="nav__link" href="location.html">Location</a></li>
+      <li><a class="nav__link" href="video-gallery.html">Video Gallery</a></li>
+      <li><a class="nav__link" href="index.html#contacts">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header__inner">
+      <h1 class="page-header__title">Blog</h1>
+      <p class="page-header__subtitle">Истории наших клиентов из путешествий по всему миру.</p>
+    </div>
+  </header>
+
+  <main class="blog-layout">
+
+    <!-- Left sidebar -->
+    <aside class="blog-sidebar blog-sidebar--left">
+      <div class="sidebar-widget">
+        <h3 class="sidebar-widget__heading">Последние записи</h3>
+        <ul class="recent-list">
+          <li class="recent-list__item">
+            <a href="#article1" class="recent-list__link">Неделя на Мальте: солнце, рыцари и лазурные лагуны</a>
+            <span class="recent-list__date">23.05.2025</span>
+          </li>
+          <li class="recent-list__item">
+            <a href="#article2" class="recent-list__link">Сингапур за 48 часов: гайд для тех, кто ценит время</a>
+            <span class="recent-list__date">20.05.2025</span>
+          </li>
+          <li class="recent-list__item">
+            <a href="#article3" class="recent-list__link">Шотландия в октябре: туман, вереск и правильный виски</a>
+            <span class="recent-list__date">16.05.2025</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Center feed -->
+    <section class="blog-feed" aria-label="Articles">
+
+      <article class="article-card" id="article1">
+        <div class="article-card__meta">
+          <span class="article-card__author">Анастасия</span>
+          <span class="article-card__date">23.05.2025</span>
+        </div>
+        <h2 class="article-card__title">Неделя на Мальте: солнце, рыцари и лазурные лагуны</h2>
+        <div class="article-card__stars">★★★★★</div>
+        <p class="article-card__excerpt">Мальта оказалась именно такой, как я мечтала: тёплое море, мощёные улочки Валлетты и невероятные закаты над бухтой Марсашлокк. Благодаря Natalia's Birds место на рейсе было за мной ещё за три месяца до отъезда…</p>
+      </article>
+
+      <article class="article-card" id="article2">
+        <div class="article-card__meta">
+          <span class="article-card__author">Виктория</span>
+          <span class="article-card__date">20.05.2025</span>
+        </div>
+        <h2 class="article-card__title">Сингапур за 48 часов: гайд для тех, кто ценит время</h2>
+        <div class="article-card__stars">★★★★★</div>
+        <p class="article-card__excerpt">Транзит через Сингапур превратился в одно из лучших путешествий в моей жизни. Gardens by the Bay ночью, Chinatown с рассветом, лучший laksa в Maxwell Food Centre…</p>
+      </article>
+
+      <article class="article-card" id="article3">
+        <div class="article-card__meta">
+          <span class="article-card__author">Дарья</span>
+          <span class="article-card__date">16.05.2025</span>
+        </div>
+        <h2 class="article-card__title">Шотландия в октябре: туман, вереск и правильный виски</h2>
+        <div class="article-card__stars">★★★★★</div>
+        <p class="article-card__excerpt">Октябрь — лучшее время для Шотландии. Туристов мало, хайленды окрашены в золото и багрянец, а в каждом пабе тебя угощают историями не хуже, чем виски…</p>
+      </article>
+
+    </section>
+
+    <!-- Right sidebar -->
+    <aside class="blog-sidebar blog-sidebar--right">
+      <div class="sidebar-widget">
+        <h3 class="sidebar-widget__heading">Написать статью</h3>
+        <form class="post-form" action="#" method="post" novalidate>
+
+          <div class="post-form__field">
+            <label class="post-form__label" for="postTitle">Заголовок</label>
+            <input class="post-form__input" id="postTitle" type="text" placeholder="Название вашей статьи" />
+          </div>
+
+          <div class="post-form__field">
+            <label class="post-form__label" for="postText">Текст</label>
+            <textarea class="post-form__textarea" id="postText" rows="5" placeholder="Расскажите о вашем путешествии…"></textarea>
+          </div>
+
+          <div class="post-form__field">
+            <label class="post-form__label" for="postPhoto">Фотография</label>
+            <label class="post-form__upload" for="postPhoto">
+              <span class="post-form__upload-icon">📷</span>
+              <span class="post-form__upload-text">Выбрать файл</span>
+              <span class="post-form__upload-hint">JPG, PNG — до 5 МБ</span>
+              <input class="post-form__upload-input" id="postPhoto" type="file" accept="image/*" />
+            </label>
+          </div>
+
+          <div class="post-form__field">
+            <label class="post-form__label" for="postNick">Никнейм</label>
+            <input class="post-form__input" id="postNick" type="text" placeholder="Как вас называть?" />
+          </div>
+
+          <button class="btn btn--primary post-form__submit" type="submit">Отправить статью</button>
+
+        </form>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; Natalia's Birds</p>
+      <ul class="footer__phones">
+        <li><a class="footer__phone" href="tel:+38111123456">📞 +381 11 123-456</a></li>
+        <li><a class="footer__phone" href="tel:+38111234567">📞 +381 11 234-567</a></li>
+        <li><a class="footer__phone" href="tel:+38111345678">📞 +381 11 345-678</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

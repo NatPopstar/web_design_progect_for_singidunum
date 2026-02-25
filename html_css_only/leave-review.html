@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalia's Birds — Оставить отзыв</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="leave-review.css" />
+  <link rel="icon" href="/html_css_only/logo1.png">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <input type="checkbox" id="navToggle" class="nav__checkbox" />
+    <label for="navToggle" class="nav__label" aria-label="Открыть меню">
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+    </label>
+    <ul class="nav__menu" role="list">
+      <li><a class="nav__link" href="index.html">About Us</a></li>
+      <li><a class="nav__link nav__link--active" href="gallery.html">Gallery</a></li>
+      <li><a class="nav__link" href="portfolio.html">Portfolio</a></li>
+      <li><a class="nav__link" href="blog.html">Blog</a></li>
+      <li><a class="nav__link" href="location.html">Location</a></li>
+      <li><a class="nav__link" href="video-gallery.html">Video Gallery</a></li>
+      <li><a class="nav__link" href="index.html#contacts">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header__inner">
+      <a class="review-back" href="gallery.html">← Назад в Gallery</a>
+      <h1 class="page-header__title">Оставить отзыв</h1>
+      <p class="page-header__subtitle">Расскажите о своём путешествии — ваш опыт вдохновит других.</p>
+    </div>
+  </header>
+
+  <main class="review-main">
+    <div class="review-layout">
+
+      <!-- Left: form -->
+      <div class="review-form-wrap">
+        <form class="review-form" action="#" method="post" novalidate>
+
+          <!-- Name -->
+          <div class="rf-field">
+            <label class="rf-field__label" for="reviewName">Ваше имя</label>
+            <input
+              class="rf-field__input"
+              id="reviewName"
+              type="text"
+              placeholder="Как вас зовут?"
+              autocomplete="given-name"
+            />
+          </div>
+
+          <!-- Star rating — CSS-only: hidden radios drive filled stars -->
+          <fieldset class="rf-field rf-stars" aria-label="Ваша оценка">
+            <legend class="rf-field__label">Оценка</legend>
+            <div class="rf-stars__row">
+              <input type="radio" id="s5" name="rating" value="5" class="rf-stars__radio" />
+              <label for="s5" class="rf-stars__label" aria-label="5 звёзд">★</label>
+
+              <input type="radio" id="s4" name="rating" value="4" class="rf-stars__radio" />
+              <label for="s4" class="rf-stars__label" aria-label="4 звезды">★</label>
+
+              <input type="radio" id="s3" name="rating" value="3" class="rf-stars__radio" />
+              <label for="s3" class="rf-stars__label" aria-label="3 звезды">★</label>
+
+              <input type="radio" id="s2" name="rating" value="2" class="rf-stars__radio" />
+              <label for="s2" class="rf-stars__label" aria-label="2 звезды">★</label>
+
+              <input type="radio" id="s1" name="rating" value="1" class="rf-stars__radio" />
+              <label for="s1" class="rf-stars__label" aria-label="1 звезда">★</label>
+            </div>
+          </fieldset>
+
+          <!-- Destination -->
+          <div class="rf-field">
+            <label class="rf-field__label" for="reviewDest">Направление</label>
+            <select class="rf-field__select" id="reviewDest">
+              <option value="">— куда летели? —</option>
+              <option>США</option>
+              <option>Канада</option>
+              <option>Ирландия</option>
+              <option>Англия</option>
+              <option>Австралия</option>
+              <option>Новая Зеландия</option>
+              <option>Мальта</option>
+              <option>Сингапур</option>
+              <option>Шотландия</option>
+            </select>
+          </div>
+
+          <!-- Review text -->
+          <div class="rf-field">
+            <label class="rf-field__label" for="reviewText">Текст отзыва</label>
+            <textarea
+              class="rf-field__textarea"
+              id="reviewText"
+              rows="5"
+              placeholder="Расскажите о вашем опыте: как прошёл перелёт, что понравилось, что удивило…"
+            ></textarea>
+          </div>
+
+          <!-- Recommend -->
+          <div class="rf-field">
+            <label class="rf-field__label" for="reviewRecommend">Посоветуете нас друзьям?</label>
+            <select class="rf-field__select" id="reviewRecommend">
+              <option value="">— выберите —</option>
+              <option value="yes">Да, обязательно!</option>
+              <option value="no">Нет</option>
+            </select>
+          </div>
+
+          <!-- Photo upload hint -->
+          <div class="rf-field">
+            <label class="rf-field__label" for="reviewPhoto">Фото из путешествия (необязательно)</label>
+            <label class="rf-upload" for="reviewPhoto">
+              <span class="rf-upload__icon">📷</span>
+              <span class="rf-upload__text">Нажмите, чтобы выбрать файл</span>
+              <span class="rf-upload__hint">JPG, PNG — до 5 МБ</span>
+              <input class="rf-upload__input" id="reviewPhoto" type="file" accept="image/*" />
+            </label>
+          </div>
+
+          <button class="btn btn--primary rf-submit" type="submit">Отправить отзыв</button>
+
+        </form>
+      </div>
+
+      <!-- Right: existing reviews preview -->
+      <aside class="review-sidebar">
+        <h2 class="review-sidebar__heading">Что говорят другие</h2>
+
+        <article class="review-preview">
+          <div class="review-preview__header">
+            <svg class="review-preview__avatar" viewBox="0 0 40 40" width="36" height="36">
+              <circle cx="20" cy="20" r="20" fill="rgb(202 140 152)"/>
+              <circle cx="20" cy="15" r="7" fill="rgb(241 220 205)"/>
+              <ellipse cx="20" cy="35" rx="12" ry="8" fill="rgb(241 220 205)"/>
+            </svg>
+            <div>
+              <p class="review-preview__name">Наташа</p>
+              <p class="review-preview__dest">Мальдивы</p>
+            </div>
+            <span class="review-preview__stars">★★★★★</span>
+          </div>
+          <p class="review-preview__text">«Всё прошло как в сказке. Места были зарезервированы заранее, нас встретили с улыбками.»</p>
+        </article>
+
+        <article class="review-preview">
+          <div class="review-preview__header">
+            <svg class="review-preview__avatar" viewBox="0 0 40 40" width="36" height="36">
+              <circle cx="20" cy="20" r="20" fill="rgb(123 88 113)"/>
+              <circle cx="20" cy="15" r="7" fill="rgb(241 220 205)"/>
+              <ellipse cx="20" cy="35" rx="12" ry="8" fill="rgb(241 220 205)"/>
+            </svg>
+            <div>
+              <p class="review-preview__name">Маша</p>
+              <p class="review-preview__dest">Барселона</p>
+            </div>
+            <span class="review-preview__stars">★★★★★</span>
+          </div>
+          <p class="review-preview__text">«Летела первый раз одна и очень боялась. Благодаря Natalia's Birds всё оказалось элементарным!»</p>
+        </article>
+
+        <article class="review-preview">
+          <div class="review-preview__header">
+            <svg class="review-preview__avatar" viewBox="0 0 40 40" width="36" height="36">
+              <circle cx="20" cy="20" r="20" fill="rgb(84 98 127)"/>
+              <circle cx="20" cy="15" r="7" fill="rgb(241 220 205)"/>
+              <ellipse cx="20" cy="35" rx="12" ry="8" fill="rgb(241 220 205)"/>
+            </svg>
+            <div>
+              <p class="review-preview__name">Даша</p>
+              <p class="review-preview__dest">Дубай</p>
+            </div>
+            <span class="review-preview__stars">★★★★★</span>
+          </div>
+          <p class="review-preview__text">«Летели компанией, и ни один из нас не остался без места. Отдельное спасибо за внимательность!»</p>
+        </article>
+
+        <a class="btn btn--outline review-sidebar__btn" href="gallery.html">Читать все отзывы →</a>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; Natalia's Birds</p>
+      <ul class="footer__phones">
+        <li><a class="footer__phone" href="tel:+38111123456">📞 +381 11 123-456</a></li>
+        <li><a class="footer__phone" href="tel:+38111234567">📞 +381 11 234-567</a></li>
+        <li><a class="footer__phone" href="tel:+38111345678">📞 +381 11 345-678</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

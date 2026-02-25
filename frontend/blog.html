@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalia's Birds — Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="gallery.css" />
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+
+  <!-- Page header -->
+  <header class="page-header" style="position:relative;">
+    <nav class="nav nav--page" aria-label="Main navigation">
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+      </button>
+      <ul class="nav__menu" id="navMenu" role="list">
+        <li><a class="nav__link" href="index.html">About Us</a></li>
+        <li><a class="nav__link" href="gallery.html">Gallery</a></li>
+        <li><a class="nav__link" href="portfolio.html">Portfolio</a></li>
+        <li><a class="nav__link nav__link--active" href="blog.html">Blog</a></li>
+        <li><a class="nav__link" href="location.html">Location</a></li>
+        <li><a class="nav__link" href="video-gallery.html">Video Gallery</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="page-header__text">
+      <h1 class="page-header__title">Blog</h1>
+      <p class="page-header__subtitle">
+        Читайте истории путешественников, которые летели с Natalia's&nbsp;Birds, делитесь своими впечатлениями
+        и публикуйте статьи о местах, которые вас покорили. Здесь рождаются маршруты мечты.
+      </p>
+    </div>
+  </header>
+
+  <!-- 3-column layout -->
+  <div class="blog-layout">
+
+    <!-- left sidebar -->
+    <aside class="blog-sidebar blog-sidebar--left" aria-label="Calendar and recent posts">
+
+      <!-- Mini calendar -->
+      <div class="widget">
+        <h2 class="widget__title">Календарь</h2>
+        <div class="calendar" id="calendar" aria-label="Mini calendar"></div>
+      </div>
+
+      <!-- Recent posts list -->
+      <div class="widget">
+        <h2 class="widget__title">Последние публикации</h2>
+        <ul class="recent-list" id="recentList" aria-label="Recent posts"></ul>
+      </div>
+
+    </aside>
+
+    <!-- center: article feed -->
+    <main class="blog-feed" id="blogFeed" aria-label="Article feed" aria-live="polite">
+      <!-- Articles injected by JS -->
+    </main>
+
+    <!-- Right sidebar -->
+    <aside class="blog-sidebar blog-sidebar--right" aria-label="Submit a new post">
+      <div class="widget">
+        <h2 class="widget__title">Написать статью</h2>
+        <form class="post-form" id="postForm" novalidate>
+
+          <div class="post-form__field">
+            <label class="post-form__label" for="postTitle">Заголовок</label>
+            <input
+              class="post-form__input"
+              id="postTitle"
+              type="text"
+              placeholder="Название вашей статьи"
+              maxlength="120"
+              required
+            />
+          </div>
+
+          <div class="post-form__field">
+            <label class="post-form__label" for="postBody">Текст</label>
+            <textarea
+              class="post-form__textarea"
+              id="postBody"
+              placeholder="Расскажите вашу историю…"
+              rows="7"
+              required
+            ></textarea>
+          </div>
+
+          <div class="post-form__field">
+            <label class="post-form__label" for="postImages">Фотографии</label>
+            <label class="post-form__file-label" for="postImages" aria-describedby="fileHint">
+              <span class="post-form__file-icon" aria-hidden="true">📎</span>
+              <span id="fileHint" class="post-form__file-text">Прикрепить картинки</span>
+            </label>
+            <input
+              class="post-form__file"
+              id="postImages"
+              type="file"
+              accept="image/*"
+              multiple
+            />
+            <ul class="post-form__file-preview" id="filePreview" aria-label="Selected images"></ul>
+          </div>
+
+          <div class="post-form__field">
+            <label class="post-form__label" for="postAuthor">Имя / никнейм</label>
+            <input
+              class="post-form__input"
+              id="postAuthor"
+              type="text"
+              placeholder="Как вас называть?"
+              maxlength="60"
+              required
+            />
+          </div>
+
+          <p class="post-form__error" id="postFormError" role="alert" aria-live="assertive"></p>
+
+          <button class="btn btn--primary post-form__submit" type="submit">Опубликовать</button>
+        </form>
+      </div>
+
+      <!-- Admin login / logout widget -->
+      <div id="adminWidget"></div>
+
+    </aside>
+
+  </div>
+
+  <!-- Admin moderation panel -->
+  <div id="adminPanel" class="admin-panel-wrapper"></div>
+
+  <!-- footer -->
+  <footer class="footer" aria-label="Footer">
+    <div class="footer__container">
+      <p class="footer__copy">&copy; Natalia's Birds</p>
+      <ul class="footer__phones" role="list" aria-label="Contact phone numbers">
+        <li>
+          <a class="footer__phone-link" href="tel:+38111123456" aria-label="Call +381 11 123-456">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>
+            +381 11 123-456
+          </a>
+        </li>
+        <li>
+          <a class="footer__phone-link" href="tel:+38111234567" aria-label="Call +381 11 234-567">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>
+            +381 11 234-567
+          </a>
+        </li>
+        <li>
+          <a class="footer__phone-link" href="tel:+38111345678" aria-label="Call +381 11 345-678">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>
+            +381 11 345-678
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html>

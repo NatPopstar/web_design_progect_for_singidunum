@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalia's Birds — Location</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="location.css" />
+  <link rel="icon" href="/html_css_only/logo1.png">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <input type="checkbox" id="navToggle" class="nav__checkbox" />
+    <label for="navToggle" class="nav__label" aria-label="Открыть меню">
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+    </label>
+    <ul class="nav__menu" role="list">
+      <li><a class="nav__link" href="index.html">About Us</a></li>
+      <li><a class="nav__link" href="gallery.html">Gallery</a></li>
+      <li><a class="nav__link" href="portfolio.html">Portfolio</a></li>
+      <li><a class="nav__link" href="blog.html">Blog</a></li>
+      <li><a class="nav__link nav__link--active" href="location.html">Location</a></li>
+      <li><a class="nav__link" href="video-gallery.html">Video Gallery</a></li>
+      <li><a class="nav__link" href="index.html#contacts">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header__inner">
+      <h1 class="page-header__title">Location</h1>
+      <p class="page-header__subtitle">Найти нас проще, чем кажется — следуйте инструкции ниже.</p>
+    </div>
+  </header>
+
+  <main class="location-main">
+
+    <!-- Map + address -->
+    <section class="loc-map-section" aria-label="Office on map">
+      <div class="loc-map">
+        <iframe
+          title="Our office in Belgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184867.65765013284!2d20.328979!3d44.8178131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa3d7b53fbd%3A0x1db30a209aef6a26!2sBelgrade%2C%20Serbia!5e0!3m2!1sen!2s!4v1700000000000"
+          width="100%" height="340"
+          style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <address class="loc-address">
+        <h2 class="loc-address__heading">Наш офис</h2>
+        <p class="loc-address__line">📍 Даниеловска, 21, Белград</p>
+        <p class="loc-address__line">🕐 Пн–Пт: 07:00 — 22:00</p>
+        <p class="loc-address__line">📞 <a href="tel:+38111123456">+381 11 123-456</a></p>
+      </address>
+    </section>
+
+    <!-- Walking directions -->
+    <section class="directions" aria-label="Walking directions">
+      <h2 class="directions__heading">Как нас найти</h2>
+      <p class="directions__from">От остановки <strong>Университет Сингидунум</strong></p>
+
+      <ol class="directions__steps">
+        <li class="directions__step">
+          <div class="directions__num">1</div>
+          <div class="directions__body">
+            <p>Переходите дорогу на противоположную сторону.</p>
+          </div>
+        </li>
+        <li class="directions__step">
+          <div class="directions__num">2</div>
+          <div class="directions__body">
+            <p>Идёте прямо вниз до перекрёстка.</p>
+          </div>
+        </li>
+        <li class="directions__step">
+          <div class="directions__num">3</div>
+          <div class="directions__body">
+            <p>На перекрёстке поворачиваете направо.</p>
+            <p class="directions__hint">☕ Ориентир: слева от вас будет кафе.</p>
+          </div>
+        </li>
+        <li class="directions__step">
+          <div class="directions__num">4</div>
+          <div class="directions__body">
+            <p>Идёте прямо до большого здания Университета Сингидунум.</p>
+          </div>
+        </li>
+        <li class="directions__step directions__step--final">
+          <div class="directions__num">5</div>
+          <div class="directions__body">
+            <p>Наш офис находится в этом здании.</p>
+            <p class="directions__hint">💬 Спросите у охранника на входе — он подскажет.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; Natalia's Birds</p>
+      <ul class="footer__phones">
+        <li><a class="footer__phone" href="tel:+38111123456">📞 +381 11 123-456</a></li>
+        <li><a class="footer__phone" href="tel:+38111234567">📞 +381 11 234-567</a></li>
+        <li><a class="footer__phone" href="tel:+38111345678">📞 +381 11 345-678</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

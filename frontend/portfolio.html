@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalia's Birds — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="gallery.css" />
+  <link rel="stylesheet" href="portfolio.css" />
+  <link rel="icon" href="/frontend/logo1.png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="page-header" style="position:relative;">
+    <nav class="nav nav--page" aria-label="Main navigation">
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+      </button>
+      <ul class="nav__menu" id="navMenu" role="list">
+        <li><a class="nav__link" href="index.html">About Us</a></li>
+        <li><a class="nav__link" href="gallery.html">Gallery</a></li>
+        <li><a class="nav__link nav__link--active" href="portfolio.html">Portfolio</a></li>
+        <li><a class="nav__link" href="blog.html">Blog</a></li>
+        <li><a class="nav__link" href="location.html">Location</a></li>
+        <li><a class="nav__link" href="video-gallery.html">Video Gallery</a></li>
+        <li><a class="nav__link" href="index.html#contacts">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="page-header__text">
+      <h1 class="page-header__title">Portfolio</h1>
+      <p class="page-header__subtitle">
+        Здесь собраны все туристические направления, по которым Natalia's&nbsp;Birds бронирует авиабилеты.
+        Нажмите на любую карточку, чтобы узнать подробнее о стране, крупных аэропортах и популярных маршрутах.
+      </p>
+    </div>
+  </header>
+
+  <!-- Destination grid -->
+  <main class="portfolio-main">
+    <div class="destination-grid" id="destinationGrid">
+
+      <!-- Card 1 — США -->
+      <article
+        class="destination-card"
+        data-id="usa"
+        role="button"
+        tabindex="0"
+        aria-label="США — подробнее"
+      >
+        <div class="destination-card__img-wrapper">
+          <img
+            src="https://www.nationalparked.com/files/jpg/grand-canyon/ftr-cape-royal-02744.jpg"
+            alt="Grand Canyon, США"
+            loading="lazy"
+          />
+        </div>
+        <div class="destination-card__label">США</div>
+      </article>
+
+      <!-- Card 2 — Канада -->
+      <article
+        class="destination-card"
+        data-id="canada"
+        role="button"
+        tabindex="0"
+        aria-label="Канада — подробнее"
+      >
+        <div class="destination-card__img-wrapper">
+          <img
+            src="https://cdn.britannica.com/90/252090-050-2DDB7076/Niagara-Falls-Ontario-Canada.jpg"
+            alt="Ниагарский водопад, Канада"
+            loading="lazy"
+          />
+        </div>
+        <div class="destination-card__label">Канада</div>
+      </article>
+
+      <!-- Card 3 — Ирландия -->
+      <article
+        class="destination-card"
+        data-id="ireland"
+        role="button"
+        tabindex="0"
+        aria-label="Ирландия — подробнее"
+      >
+        <div class="destination-card__img-wrapper">
+          <img
+            src="https://avatars.mds.yandex.net/get-altay/11937221/2a0000018f53b4f4bcc72f9d59142f28915a/orig"
+            alt="Ирландия"
+            loading="lazy"
+          />
+        </div>
+        <div class="destination-card__label">Ирландия</div>
+      </article>
+
+      <!-- Card 4 — Англия -->
+      <article
+        class="destination-card"
+        data-id="england"
+        role="button"
+        tabindex="0"
+        aria-label="Англия — подробнее"
+      >
+        <div class="destination-card__img-wrapper">
+          <img
+            src="https://yandex-images.clstorage.net/ZTsL50184/39b513Mxq/yKdZKqCQe9JaJ5qG7r-vLVY9o9X_i4obPTycbHfHVgkGb7nxFiFcKjmLt2vzZz2AnMW_RsKRRjNlll11AfikdsjbGG9g5S7TFyLHn8Lm_gUzRdssgsbHN0hl3WQCvhcJbwro6A9lcFtA_oPfN-eINTEoLrcPZK9rLI5Bca0R7IpwN1hH-bzbzgI7fqZv2yMBN5UvkRNLekaBMCh50_NGZI4P4TWWnaE-zd_zs_tHUN1pGHYfl9Svp2UqvRGFfEQq2Hf8own8Z74GnxJqh9uH5SuRc3kno8oqLeCUCReLamwiu8nREhXZos1vS_cf75RlfdBCm6vUQwsJhu3hWSDAWtgHUBdJsC_GFss-ip_Xjw0PGRNBa4_KbqVQDDmL80r0Uue1geJJvd4Vn3s_F0cwEV3Uyq874J87uSpFwVWINDbIc1xXKTzjzsKjruYbxwfhAzHbcZdb3lJV7OAt95Ma-B4XceFmTQ26caP7wxtrwC2N3EL3t-xf5zki1TW5xNiS8FuAC714Q9a26zZKe0OfNVeBY_1Pky7eUTQwkU-_6sAmvwnxdinNlom_T5eTfzTV3YTCw0NMX-9hsgGNyVDQshzvGAepAFeqNsMC_u_nVyGLiZvxA5NK0lkIhBGDdyrsqvPFDU6p3c45v4tvhwOAuSUIfp_7AENDvXqN_e2kZJLUhyxrDbTTUtrXqt6rCwd9u90LwXdz2vJJ0BxVcxd2PCYbZSFW0dWqIYMze6P7aCHRiNpTI6inI2l6TZ1JRGSWFMcAB0l0PyLu677W42cXoQ-RL20HvxKarcwUhWe7_kCaG2EtrgExFnHTQ-_P-9SlgUyCXzsMm0exut3lBTC0kgDvVN8hjBvWuuuOymsXK4WfuSPNgyvORhEspGUXM3ZE-p9JgRqpoT5VP6cHC6ckJW0oIodfVKfbCea5tc0sWNqcSyTzsSRfOv4Tpiob44Oxl02vVdPHRqptoDClw-vc"
+            alt="Англия"
+            loading="lazy"
+          />
+        </div>
+        <div class="destination-card__label">Англия</div>
+      </article>
+
+      <!-- Card 5 — Австралия -->
+      <article
+        class="destination-card"
+        data-id="australia"
+        role="button"
+        tabindex="0"
+        aria-label="Австралия — подробнее"
+      >
+        <div class="destination-card__img-wrapper">
+          <img
+            src="https://i.ytimg.com/vi/6z1gpw4CAAY/maxresdefault.jpg"
+            alt="Австралия"
+            loading="lazy"
+          />
+        </div>
+        <div class="destination-card__label">Австралия</div>
+      </article>
+
+      <!-- Card 6 — Новая Зеландия -->
+      <article
+        class="destination-card"
+        data-id="newzealand"
+        role="button"
+        tabindex="0"
+        aria-label="Новая Зеландия — подробнее"
+      >
+        <div class="destination-card__img-wrapper">
+          <img
+            src="https://i.ytimg.com/vi/4E4UV2Yq514/maxresdefault.jpg"
+            alt="Новая Зеландия"
+            loading="lazy"
+          />
+        </div>
+        <div class="destination-card__label">Новая Зеландия</div>
+      </article>
+
+      <!-- Card 7 — Мальта -->
+      <article
+        class="destination-card"
+        data-id="malta"
+        role="button"
+        tabindex="0"
+        aria-label="Мальта — подробнее"
+      >
+        <div class="destination-card__img-wrapper">
+          <img
+            src="https://i.ytimg.com/vi/wmdkxZOFSDA/maxresdefault.jpg"
+            alt="Мальта"
+            loading="lazy"
+          />
+        </div>
+        <div class="destination-card__label">Мальта</div>
+      </article>
+
+      <!-- Card 8 — Сингапур -->
+      <article
+        class="destination-card"
+        data-id="singapore"
+        role="button"
+        tabindex="0"
+        aria-label="Сингапур — подробнее"
+      >
+        <div class="destination-card__img-wrapper">
+          <img
+            src="https://img.freepik.com/free-photo/district-reflection-bay-commercial-financial_1203-6100.jpg?semt=ais_items_boosted&w=740"
+            alt="Сингапур"
+            loading="lazy"
+          />
+        </div>
+        <div class="destination-card__label">Сингапур</div>
+      </article>
+
+      <!-- Card 9 — Шотландия -->
+      <article
+        class="destination-card"
+        data-id="scotland"
+        role="button"
+        tabindex="0"
+        aria-label="Шотландия — подробнее"
+      >
+        <div class="destination-card__img-wrapper">
+          <img
+            src="https://begin-english.ru/img/upload/0/b/7/6/Без%20названия%20(400%C2%A0×%20300%C2%A0пикс.png"
+            alt="Шотландия"
+            loading="lazy"
+          />
+        </div>
+        <div class="destination-card__label">Шотландия</div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div
+      class="modal"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <button class="modal__close" id="modalClose" aria-label="Закрыть">&times;</button>
+
+      <div class="modal__body">
+        <h2 class="modal__title" id="modalTitle"></h2>
+        <p class="modal__description" id="modalDescription"></p>
+
+        <div class="modal__cities" id="modalCities">
+          <h3 class="modal__cities-heading">Крупные города и аэропорты</h3>
+          <ul class="modal__cities-list" id="modalCitiesList"></ul>
+        </div>
+
+        <div class="modal__map-wrapper">
+          <h3 class="modal__map-heading">Маршруты на карте</h3>
+          <iframe
+            class="modal__map"
+            id="modalMap"
+            title="Карта направления"
+            width="100%"
+            height="260"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src=""
+          ></iframe>
+        </div>
+
+        <button class="btn btn--primary modal__reserve" aria-label="Зарезервировать билеты">
+          Зарезервировать билеты
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="Footer">
+    <div class="footer__container">
+      <p class="footer__copy">&copy; Natalia's Birds</p>
+      <ul class="footer__phones" role="list" aria-label="Contact phone numbers">
+        <li>
+          <a class="footer__phone-link" href="tel:+38111123456" aria-label="Call +381 11 123-456">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>
+            +381 11 123-456
+          </a>
+        </li>
+        <li>
+          <a class="footer__phone-link" href="tel:+38111234567" aria-label="Call +381 11 234-567">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>
+            +381 11 234-567
+          </a>
+        </li>
+        <li>
+          <a class="footer__phone-link" href="tel:+38111345678" aria-label="Call +381 11 345-678">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>
+            +381 11 345-678
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="portfolio.js"></script>
+</body>
+</html>

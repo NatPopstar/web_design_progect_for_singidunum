@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalia's Birds — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="portfolio.css" />
+  <link rel="icon" href="/html_css_only/logo1.png">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <input type="checkbox" id="navToggle" class="nav__checkbox" />
+    <label for="navToggle" class="nav__label" aria-label="Открыть меню">
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+    </label>
+    <ul class="nav__menu" role="list">
+      <li><a class="nav__link" href="index.html">About Us</a></li>
+      <li><a class="nav__link" href="gallery.html">Gallery</a></li>
+      <li><a class="nav__link nav__link--active" href="portfolio.html">Portfolio</a></li>
+      <li><a class="nav__link" href="blog.html">Blog</a></li>
+      <li><a class="nav__link" href="location.html">Location</a></li>
+      <li><a class="nav__link" href="video-gallery.html">Video Gallery</a></li>
+      <li><a class="nav__link" href="index.html#contacts">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header__inner">
+      <h1 class="page-header__title">Portfolio</h1>
+      <p class="page-header__subtitle">Девять направлений, которые мы любим и куда летаем чаще всего.</p>
+    </div>
+  </header>
+
+  <main class="portfolio-main">
+    <div class="dest-grid">
+
+      <!-- USA -->
+      <article class="dest-card">
+        <div class="dest-card__img-wrap">
+          <img src="https://www.nationalparked.com/files/jpg/grand-canyon/ftr-cape-royal-02744.jpg" alt="США" loading="lazy" />
+        </div>
+        <div class="dest-card__label">США</div>
+        <div class="dest-card__info">
+          <h2 class="dest-card__title">США</h2>
+          <p class="dest-card__text">Нью-Йорк, Лос-Анджелес, Майами, Чикаго. Рейсы с Air Serbia, Delta, United Airlines.</p>
+          <a class="btn btn--primary" href="reservation.html">Зарезервировать</a>
+        </div>
+      </article>
+
+      <!-- Canada -->
+      <article class="dest-card">
+        <div class="dest-card__img-wrap">
+          <img src="https://cdn.britannica.com/90/252090-050-2DDB7076/Niagara-Falls-Ontario-Canada.jpg" alt="Канада" loading="lazy" />
+        </div>
+        <div class="dest-card__label">Канада</div>
+        <div class="dest-card__info">
+          <h2 class="dest-card__title">Канада</h2>
+          <p class="dest-card__text">Торонто, Ванкувер, Монреаль. Рейсы с Air Serbia + Air Canada.</p>
+          <a class="btn btn--primary" href="reservation.html">Зарезервировать</a>
+        </div>
+      </article>
+
+      <!-- Ireland -->
+      <article class="dest-card">
+        <div class="dest-card__img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=d9efd8a2f92561c2a5186f912653f6cd_l-4578672-images-thumbs&n=13" alt="Ирландия" loading="lazy" />
+        </div>
+        <div class="dest-card__label">Ирландия</div>
+        <div class="dest-card__info">
+          <h2 class="dest-card__title">Ирландия</h2>
+          <p class="dest-card__text">Дублин, Корк, Шеннон. Рейсы Ryanair и Aer Lingus.</p>
+          <a class="btn btn--primary" href="reservation.html">Зарезервировать</a>
+        </div>
+      </article>
+
+      <!-- England -->
+      <article class="dest-card">
+        <div class="dest-card__img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=2bad6eafd7fb6a26c88d40453ceb9b3e_l-9245043-images-thumbs&n=13" alt="Англия" loading="lazy" />
+        </div>
+        <div class="dest-card__label">Англия</div>
+        <div class="dest-card__info">
+          <h2 class="dest-card__title">Англия</h2>
+          <p class="dest-card__text">Лондон, Манчестер. Рейсы Air Serbia + British Airways, Wizz Air.</p>
+          <a class="btn btn--primary" href="reservation.html">Зарезервировать</a>
+        </div>
+      </article>
+
+      <!-- Australia -->
+      <article class="dest-card">
+        <div class="dest-card__img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=87251260b6fcd8cfa15b6ca73a0caddb1066385c-4234271-images-thumbs&n=13" alt="Австралия" loading="lazy" />
+        </div>
+        <div class="dest-card__label">Австралия</div>
+        <div class="dest-card__info">
+          <h2 class="dest-card__title">Австралия</h2>
+          <p class="dest-card__text">Сидней, Мельбурн. Рейсы Emirates + Qantas.</p>
+          <a class="btn btn--primary" href="reservation.html">Зарезервировать</a>
+        </div>
+      </article>
+
+      <!-- New Zealand -->
+      <article class="dest-card">
+        <div class="dest-card__img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=373717625c3abe5160476b7d8f5f8dfb417feca8-15286282-images-thumbs&n=13" alt="Новая Зеландия" loading="lazy" />
+        </div>
+        <div class="dest-card__label">Новая Зеландия</div>
+        <div class="dest-card__info">
+          <h2 class="dest-card__title">Новая Зеландия</h2>
+          <p class="dest-card__text">Окленд, Веллингтон. Singapore Airlines + Air NZ.</p>
+          <a class="btn btn--primary" href="reservation.html">Зарезервировать</a>
+        </div>
+      </article>
+
+      <!-- Malta -->
+      <article class="dest-card">
+        <div class="dest-card__img-wrap">
+          <img src="https://resize.tripster.ru/x4JSZ5sXgbNzUUKhWZkUmxOK584=/fit-in/1080x810/filters:no_upscale()/https://cdn.tripster.ru/photos/7e27010a-e564-448a-97a3-5d26838e53e9.jpg" alt="Мальта" loading="lazy" />
+        </div>
+        <div class="dest-card__label">Мальта</div>
+        <div class="dest-card__info">
+          <h2 class="dest-card__title">Мальта</h2>
+          <p class="dest-card__text">Валлетта. Прямые рейсы Ryanair из Белграда.</p>
+          <a class="btn btn--primary" href="reservation.html">Зарезервировать</a>
+        </div>
+      </article>
+
+      <!-- Singapore -->
+      <article class="dest-card">
+        <div class="dest-card__img-wrap">
+          <img src="https://avatars.mds.yandex.net/get-discovery-int/1682391/7f8e97447af2eedcce19ab28d289e6d4/XXXL" alt="Сингапур" loading="lazy" />
+        </div>
+        <div class="dest-card__label">Сингапур</div>
+        <div class="dest-card__info">
+          <h2 class="dest-card__title">Сингапур</h2>
+          <p class="dest-card__text">Прямые рейсы Singapore Airlines.</p>
+          <a class="btn btn--primary" href="reservation.html">Зарезервировать</a>
+        </div>
+      </article>
+
+      <!-- Scotland -->
+      <article class="dest-card">
+        <div class="dest-card__img-wrap">
+          <img src="https://thepointsguy.global.ssl.fastly.net/us/originals/2022/01/Glenfinnian-Viaduct_Falk-Meier-EyeEm.jpg?width=1200" alt="Шотландия" loading="lazy" />
+        </div>
+        <div class="dest-card__label">Шотландия</div>
+        <div class="dest-card__info">
+          <h2 class="dest-card__title">Шотландия</h2>
+          <p class="dest-card__text">Эдинбург, Глазго, Инвернесс. Wizz Air, Ryanair, easyJet.</p>
+          <a class="btn btn--primary" href="reservation.html">Зарезервировать</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; Natalia's Birds</p>
+      <ul class="footer__phones">
+        <li><a class="footer__phone" href="tel:+38111123456">📞 +381 11 123-456</a></li>
+        <li><a class="footer__phone" href="tel:+38111234567">📞 +381 11 234-567</a></li>
+        <li><a class="footer__phone" href="tel:+38111345678">📞 +381 11 345-678</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalia's Birds — All Photos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="gallery.css" />
+  <link rel="icon" href="/frontend/logo1.png">
+</head>
+<body>
+
+  <header class="page-header">
+    <nav class="nav nav--page" aria-label="Main navigation">
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+      </button>
+      <ul class="nav__menu" id="navMenu" role="list">
+        <li><a class="nav__link" href="index.html">About Us</a></li>
+        <li><a class="nav__link nav__link--active" href="gallery.html">Gallery</a></li>
+        <li><a class="nav__link" href="portfolio.html">Portfolio</a></li>
+        <li><a class="nav__link" href="blog.html">Blog</a></li>
+        <li><a class="nav__link" href="location.html">Location</a></li>
+        <li><a class="nav__link" href="video-gallery.html">Video Gallery</a></li>
+        <li><a class="nav__link" href="index.html#contacts">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="page-header__text">
+      <h1 class="page-header__title">Все фотографии</h1>
+      <p class="page-header__subtitle">Полная коллекция путешествий наших клиентов</p>
+    </div>
+  </header>
+
+  <main class="all-gallery-main">
+    <a class="btn btn--outline back-link" href="gallery.html">&larr; Назад в галерею</a>
+
+    <div class="photo-grid" id="photoGrid">
+      <figure class="photo-grid__item">
+        <img
+          src="https://i.pinimg.com/originals/67/ff/c8/67ffc851891d06ca15e461c285bec0d6.png?nii=t"
+          alt="Traveller enjoying a scenic view"
+          loading="lazy"
+        />
+      </figure>
+      <figure class="photo-grid__item">
+        <img
+          src="https://img.freepik.com/premium-photo/moody-landscape-with-dolomite-mountains-perfect-sunset-light_1048944-9748646.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="Dolomite mountains at sunset"
+          loading="lazy"
+        />
+      </figure>
+      <figure class="photo-grid__item">
+        <img
+          src="https://yandex-images.clstorage.net/ZTsL50184/39b513dEG/nL8QE5nkMrJqZ9P2x4OjLQ9k_-nTyqJfeSCZSBfeCwV7U7zsHgxYQ3Wv9y_OBwiwrZm_Ss_NXwZtshBtrd3Zb9WiSSbY6UuuanOC2u6zyx1PMc-c35-qO2k9_XgHJ77ctr9RBY6hjbqp0-YbgzfwQM0kDsPfxHMfjfJVabGEIGYg2zjTdeyrWrpLGvoDwwMVHzl76YsXTuK1JFRVW0tyfG5XCTXWCRUKqR-vv39X2C1lhKaDeyCDXzGCUc3dSMhmhD8k1ykEn7IKJ7Yqv7PHbTMx112j88pqzbhU5eMPltSq7x394o0pCkWzwxMvpwRx4fSm89eUwxN5-kGZ8ajQaozXAF9JPNOeCmM-mieDWxUTqacB36M6NqnEjBXTx558Dps9-Wq5uT6Zg3O_h4cI2RWYtofb1KOftfKV8WHEVHoEOwx3gQwvSh5fzibLlyd1Q6Xr8RvDvjIZoOgpUzuSUP6n7fHi4TUyWV_ztxdz5JX5PI6vB4g32xXq4bn5aDT-nO9YxzmA94Lu08r-GyufWbOd01lj065W2YwQNedvGkQKX72pYtXBkllXqyfDy5QB8RxiG5-EI6MBlmGRzdygWlT7hM_BjLuCit_Cwq-rU5FzsV8Vry-W1snUoDUjlw44vjNFJd6Jed5F-3fvT7uw9UU8qnOr6IcXhW6NhWX85LYEp7SbUbzPYhr_0ho376PxL2HT_Q8Djq7BsLgJm4MqwFarsaV6RaF2oZuj74_bFBVFOGozh4TD12keublx9KzaFHsA13UQv67SlzYGPz-3Xacdb_0LD3Z-JQzoWesXRsDqL-FhIkm50p3_ey8fo1hhlTx-G9Ncqy9N6u25QegkqihfkP95sDs6DkuK5o_fx9UvGQ95I6PC1rUkzLUP_4KcGq8NBYKR3YqhY8Nze_OQfXl04r-jcDuHCQapQWkIVF6Aa5gL9Shr1oan9mobHxMNh7FjMQtfuvLdPBiJA8fw"
+          alt="Beautiful travel destination"
+          loading="lazy"
+        />
+      </figure>
+    </div>
+  </main>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="footer__container">
+      <p class="footer__copy">&copy; Natalia's Birds</p>
+      <ul class="footer__phones" role="list" aria-label="Contact phone numbers">
+        <li>
+          <a class="footer__phone-link" href="tel:+38111123456" aria-label="Call +381 11 123-456">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>
+            +381 11 123-456
+          </a>
+        </li>
+        <li>
+          <a class="footer__phone-link" href="tel:+38111234567" aria-label="Call +381 11 234-567">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>
+            +381 11 234-567
+          </a>
+        </li>
+        <li>
+          <a class="footer__phone-link" href="tel:+38111345678" aria-label="Call +381 11 345-678">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>
+            +381 11 345-678
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

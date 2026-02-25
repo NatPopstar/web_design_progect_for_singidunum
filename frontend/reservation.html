@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalia's Birds — Резервирование билетов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="gallery.css" />
+  <link rel="stylesheet" href="reservation.css" />
+</head>
+<body>
+
+  <header class="page-header" style="position:relative;">
+    <nav class="nav nav--page" aria-label="Main navigation">
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+      </button>
+      <ul class="nav__menu" id="navMenu" role="list">
+        <li><a class="nav__link" href="index.html">About Us</a></li>
+        <li><a class="nav__link" href="gallery.html">Gallery</a></li>
+        <li><a class="nav__link" href="portfolio.html">Portfolio</a></li>
+        <li><a class="nav__link" href="blog.html">Blog</a></li>
+        <li><a class="nav__link" href="location.html">Location</a></li>
+        <li><a class="nav__link" href="video-gallery.html">Video Gallery</a></li>
+        <li><a class="nav__link" href="index.html#contacts">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="page-header__text">
+      <h1 class="page-header__title">Резервирование билетов</h1>
+      <p class="page-header__subtitle">Выберите направление, место в самолёте и заполните данные — мы гарантируем ваше место на борту.</p>
+    </div>
+  </header>
+
+  <main class="reservation-main">
+
+    <!-- Progress bar -->
+    <div class="progress-bar" aria-label="Шаги оформления">
+      <div class="progress-bar__step progress-bar__step--active" data-step="1">
+        <div class="progress-bar__dot">1</div>
+        <span class="progress-bar__label">Направление</span>
+      </div>
+      <div class="progress-bar__line"></div>
+      <div class="progress-bar__step" data-step="2">
+        <div class="progress-bar__dot">2</div>
+        <span class="progress-bar__label">Места</span>
+      </div>
+      <div class="progress-bar__line"></div>
+      <div class="progress-bar__step" data-step="3">
+        <div class="progress-bar__dot">3</div>
+        <span class="progress-bar__label">Пассажиры</span>
+      </div>
+      <div class="progress-bar__line"></div>
+      <div class="progress-bar__step" data-step="4">
+        <div class="progress-bar__dot">4</div>
+        <span class="progress-bar__label">Оплата</span>
+      </div>
+    </div>
+
+    <!-- Step 1 -->
+    <section class="res-step" id="step1" aria-label="Шаг 1: Выбор направления">
+      <h2 class="res-step__heading">Куда летим?</h2>
+
+      <div class="res-step__fields">
+        <div class="res-field">
+          <label class="res-field__label" for="selectCountry">Страна назначения</label>
+          <select class="res-field__select" id="selectCountry">
+            <option value="">— выберите страну —</option>
+          </select>
+        </div>
+
+        <div class="res-field" id="cityFieldWrapper" style="display:none;">
+          <label class="res-field__label" for="selectCity">Город</label>
+          <select class="res-field__select" id="selectCity">
+            <option value="">— выберите город —</option>
+          </select>
+        </div>
+
+        <div class="airline-card" id="airlineCard" style="display:none;" aria-live="polite">
+          <span class="airline-card__icon" aria-hidden="true">✈️</span>
+          <div class="airline-card__info">
+            <p class="airline-card__label">Авиакомпания</p>
+            <p class="airline-card__name" id="airlineName"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="res-step__nav">
+        <button class="btn btn--primary" id="step1Next" disabled>Далее →</button>
+      </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="res-step" id="step2" style="display:none;" aria-label="Шаг 2: Выбор мест">
+      <h2 class="res-step__heading">Выберите места</h2>
+      <p class="res-step__hint">
+        Зелёные места — доступны для резервирования. Серые — заняты.
+        Нажмите, чтобы выбрать (можно несколько).
+      </p>
+
+      <div class="seatmap-wrapper">
+        <div class="seatmap" id="seatMap" role="group" aria-label="Карта самолёта"></div>
+        <div class="seatmap-legend">
+          <span class="seatmap-legend__item seatmap-legend__item--available">Доступно</span>
+          <span class="seatmap-legend__item seatmap-legend__item--selected">Выбрано</span>
+          <span class="seatmap-legend__item seatmap-legend__item--taken">Занято</span>
+          <span class="seatmap-legend__item seatmap-legend__item--ours">Наши места</span>
+        </div>
+      </div>
+
+      <p class="selected-seats-summary" id="selectedSeatsSummary" aria-live="polite"></p>
+
+      <div class="res-step__nav">
+        <button class="btn btn--outline" id="step2Back">← Назад</button>
+        <button class="btn btn--primary" id="step2Next" disabled>Далее →</button>
+      </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="res-step" id="step3" style="display:none;" aria-label="Шаг 3: Данные пассажиров">
+      <h2 class="res-step__heading">Данные пассажиров</h2>
+      <div id="passengerForms"></div>
+      <div class="res-step__nav">
+        <button class="btn btn--outline" id="step3Back">← Назад</button>
+        <button class="btn btn--primary" id="step3Next">Далее →</button>
+      </div>
+    </section>
+
+    <!-- Step 4 -->
+    <section class="res-step" id="step4" style="display:none;" aria-label="Шаг 4: Способ оплаты">
+      <h2 class="res-step__heading">Способ оплаты</h2>
+
+      <div class="payment-methods" id="paymentMethods" role="group" aria-label="Выбор способа оплаты">
+        <label class="payment-card" data-method="raiffeisen">
+          <input type="radio" name="payment" value="raiffeisen" class="payment-card__radio" />
+          <span class="payment-card__icon">🏦</span>
+          <span class="payment-card__name">Raiffeisen Bank</span>
+        </label>
+        <label class="payment-card" data-method="revolut">
+          <input type="radio" name="payment" value="revolut" class="payment-card__radio" />
+          <span class="payment-card__icon">💳</span>
+          <span class="payment-card__name">Revolut</span>
+        </label>
+        <label class="payment-card" data-method="qiwi">
+          <input type="radio" name="payment" value="qiwi" class="payment-card__radio" />
+          <span class="payment-card__icon">🥝</span>
+          <span class="payment-card__name">QIWI</span>
+        </label>
+        <label class="payment-card" data-method="paypal">
+          <input type="radio" name="payment" value="paypal" class="payment-card__radio" />
+          <span class="payment-card__icon">🅿️</span>
+          <span class="payment-card__name">PayPal</span>
+        </label>
+      </div>
+
+      <!-- Booking summary -->
+      <div class="booking-summary" id="bookingSummary" aria-label="Итого бронирования"></div>
+
+      <div class="res-step__nav">
+        <button class="btn btn--outline" id="step4Back">← Назад</button>
+        <button class="btn btn--primary" id="reserveBtn" disabled>Зарезервировать ✓</button>
+      </div>
+    </section>
+
+    <!-- Confirmation -->
+    <section class="res-step confirmation" id="confirmation" style="display:none;" aria-label="Подтверждение">
+      <div class="confirmation__icon" aria-hidden="true">🎉</div>
+      <h2 class="confirmation__heading">Резервирование оформлено!</h2>
+      <p class="confirmation__text" id="confirmationText"></p>
+      <a class="btn btn--primary" href="index.html">На главную</a>
+    </section>
+
+  </main>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="footer__container">
+      <p class="footer__copy">&copy; Natalia's Birds</p>
+      <ul class="footer__phones" role="list">
+        <li>
+          <a class="footer__phone-link" href="tel:+38111123456" aria-label="Call +381 11 123-456">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>+381 11 123-456
+          </a>
+        </li>
+        <li>
+          <a class="footer__phone-link" href="tel:+38111234567" aria-label="Call +381 11 234-567">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>+381 11 234-567
+          </a>
+        </li>
+        <li>
+          <a class="footer__phone-link" href="tel:+38111345678" aria-label="Call +381 11 345-678">
+            <span class="footer__phone-icon" aria-hidden="true">📞</span>+381 11 345-678
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="reservation.js"></script>
+</body>
+</html>

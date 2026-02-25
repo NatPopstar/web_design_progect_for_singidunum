@@ -1,0 +1,152 @@
+/* All Photos page */
+
+/* Back link in header */
+.all-photos__back {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(241 223 201 / 0.7);
+  margin-bottom: 0.75rem;
+  transition: color var(--transition);
+}
+
+.all-photos__back:hover { color: var(--clr-sand); }
+
+/* --------------------------------------------------------
+   MAIN WRAPPER
+   -------------------------------------------------------- */
+.all-photos-main {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 4rem) 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+/* --------------------------------------------------------
+   COUNTRY SECTION
+   -------------------------------------------------------- */
+.photos-group__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 600;
+  color: var(--clr-plum);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--clr-rose);
+  display: inline-block;
+}
+
+/* --------------------------------------------------------
+   MASONRY GRID  (CSS columns)
+   -------------------------------------------------------- */
+.photos-masonry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.photo-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+}
+
+.photo-item--tall { aspect-ratio: 4/3; }
+.photo-item--wide { grid-column: 1 / -1; aspect-ratio: 16/6; }  /* spans all columns */
+
+.photo-item__link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.photo-item:hover img { transform: scale(1.05); }
+
+/* Hover overlay with caption */
+.photo-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(84 98 127 / 0.75) 0%, transparent 55%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.photo-item:hover .photo-item__overlay { opacity: 1; }
+
+.photo-item__overlay span {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--clr-white);
+  text-shadow: 0 1px 4px rgba(0 0 0 / 0.5);
+}
+
+/* --------------------------------------------------------
+   STICKY COUNTRY JUMP-NAV  (bottom of screen)
+   -------------------------------------------------------- */
+.country-nav {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 150;
+
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  background: rgba(84 98 127 / 0.88);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 20px rgba(84 98 127 / 0.4);
+}
+
+.country-nav__link {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(241 223 201 / 0.8);
+  padding: 0.3rem 0.65rem;
+  border-radius: 30px;
+  transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+
+.country-nav__link:hover {
+  background: rgba(202 140 152 / 0.4);
+  color: var(--clr-white);
+}
+
+/* --------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------- */
+@media (max-width: 768px) {
+  .photos-masonry { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .photos-masonry { grid-template-columns: 1fr; }
+  .photo-item--wide { grid-column: 1; aspect-ratio: 4/3; }
+  .country-nav { bottom: 0.75rem; padding: 0.4rem 0.75rem; border-radius: 30px; }
+  .country-nav__link { font-size: 0.62rem; padding: 0.25rem 0.45rem; }
+}
