@@ -52,9 +52,23 @@ function closeMenu(toggle, menu) {
 // ---- Bootstrap on DOMContentLoaded ----
 document.addEventListener('DOMContentLoaded', () => {
   initNavMenu('navToggle', 'navMenu');
+
+  // Бургер меняет цвет при выходе за пределы хедера
+  const navToggle = document.getElementById('navToggle');
+  const header = document.querySelector('.page-header') || document.querySelector('.hero');
+
+  if (navToggle && header) {
+    function updateNavStyle() {
+      const headerBottom = header.getBoundingClientRect().bottom;
+      navToggle.classList.toggle('nav__toggle--scrolled', headerBottom <= 0);
+    }
+
+    window.addEventListener('scroll', updateNavStyle);
+    updateNavStyle();
+  }
 });
 
-// Export functions for unit testing (CommonJS / ESM compatible)
+// Export functions for unit testing
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { initNavMenu, closeMenu };
 }

@@ -38,7 +38,7 @@
 
 .page-header__subtitle {
   font-family: var(--font-body);
-  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  font-size: 1.25rem;
   font-weight: 300;
   color: var(--clr-blush);
   max-width: 620px;
@@ -247,7 +247,7 @@
 
 .review-card__text {
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 1.25rem;
   font-weight: 300;
   color: var(--clr-slate);
   line-height: 1.7;

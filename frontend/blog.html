@@ -34,8 +34,9 @@
     <div class="page-header__text">
       <h1 class="page-header__title">Blog</h1>
       <p class="page-header__subtitle">
-        Читайте истории путешественников, которые летели с Natalia's&nbsp;Birds, делитесь своими впечатлениями
-        и публикуйте статьи о местах, которые вас покорили. Здесь рождаются маршруты мечты.
+        Read the stories of travelers who flew with Natalia's Birds, 
+        share your impressions, and publish articles about the places that captured your heart. 
+        This is where dream routes are born.
       </p>
     </div>
   </header>
@@ -48,13 +49,13 @@
 
       <!-- Mini calendar -->
       <div class="widget">
-        <h2 class="widget__title">Календарь</h2>
+        <h2 class="widget__title">Calendar</h2>
         <div class="calendar" id="calendar" aria-label="Mini calendar"></div>
       </div>
 
       <!-- Recent posts list -->
       <div class="widget">
-        <h2 class="widget__title">Последние публикации</h2>
+        <h2 class="widget__title">Latest posts</h2>
         <ul class="recent-list" id="recentList" aria-label="Recent posts"></ul>
       </div>
 
@@ -68,37 +69,37 @@
     <!-- Right sidebar -->
     <aside class="blog-sidebar blog-sidebar--right" aria-label="Submit a new post">
       <div class="widget">
-        <h2 class="widget__title">Написать статью</h2>
+        <h2 class="widget__title">Write an article</h2>
         <form class="post-form" id="postForm" novalidate>
 
           <div class="post-form__field">
-            <label class="post-form__label" for="postTitle">Заголовок</label>
+            <label class="post-form__label" for="postTitle">Title</label>
             <input
               class="post-form__input"
               id="postTitle"
               type="text"
-              placeholder="Название вашей статьи"
+              placeholder="The name of your article"
               maxlength="120"
               required
             />
           </div>
 
           <div class="post-form__field">
-            <label class="post-form__label" for="postBody">Текст</label>
+            <label class="post-form__label" for="postBody">Text</label>
             <textarea
               class="post-form__textarea"
               id="postBody"
-              placeholder="Расскажите вашу историю…"
+              placeholder="Tell your story…"
               rows="7"
               required
             ></textarea>
           </div>
 
           <div class="post-form__field">
-            <label class="post-form__label" for="postImages">Фотографии</label>
+            <label class="post-form__label" for="postImages">Photos</label>
             <label class="post-form__file-label" for="postImages" aria-describedby="fileHint">
               <span class="post-form__file-icon" aria-hidden="true">📎</span>
-              <span id="fileHint" class="post-form__file-text">Прикрепить картинки</span>
+              <span id="fileHint" class="post-form__file-text">Download pictures</span>
             </label>
             <input
               class="post-form__file"
@@ -111,12 +112,12 @@
           </div>
 
           <div class="post-form__field">
-            <label class="post-form__label" for="postAuthor">Имя / никнейм</label>
+            <label class="post-form__label" for="postAuthor">Name / Login</label>
             <input
               class="post-form__input"
               id="postAuthor"
               type="text"
-              placeholder="Как вас называть?"
+              placeholder="What is your name/login?"
               maxlength="60"
               required
             />
@@ -124,7 +125,7 @@
 
           <p class="post-form__error" id="postFormError" role="alert" aria-live="assertive"></p>
 
-          <button class="btn btn--primary post-form__submit" type="submit">Опубликовать</button>
+          <button class="btn btn--primary post-form__submit" type="submit">Publish</button>
         </form>
       </div>
 

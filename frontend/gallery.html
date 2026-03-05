@@ -35,7 +35,8 @@
     <div class="page-header__text">
       <h1 class="page-header__title">Our Gallery</h1>
       <p class="page-header__subtitle">
-        Мы рады вашим счастливым лицам! Отправляйте нам селфи из ваших путешествий — пусть весь мир увидит, как здорово летать с Natalia's&nbsp;Birds.
+        We’re happy to see your smiling faces! Send us selfies from your travels—let the 
+        whole world see how amazing it is to fly with Natalia's&nbsp;Birds.
       </p>
     </div>
   </header>
@@ -79,13 +80,13 @@
       </div>
 
       <a class="btn btn--primary gallery-all-link" href="gallery-all.html" aria-label="View all photos in the gallery">
-        Смотреть все фото &rarr;
+        View all photos &rarr;
       </a>
     </section>
 
     <!-- right: reviews carousel + leave review button -->
     <section class="reviews-section" aria-label="Customer reviews">
-      <h2 class="reviews-section__heading">Отзывы наших клиентов</h2>
+      <h2 class="reviews-section__heading">Our customers’ reviews</h2>
 
       <div class="reviews-carousel" id="reviewsCarousel">
         <div class="reviews-carousel__track" id="reviewsTrack">
@@ -100,7 +101,7 @@
                   <ellipse cx="20" cy="35" rx="12" ry="8" fill="rgb(241 220 205)"/>
                 </svg>
               </div>
-              <span class="review-card__name">Наташа</span>
+              <span class="review-card__name">Natasha</span>
             </div>
             <div class="review-card__rating">
               <div class="review-card__stars" aria-hidden="true">
@@ -113,7 +114,9 @@
               <span class="review-card__score">5/5</span>
             </div>
             <p class="review-card__text">
-              Я летела с мужем на Мальдивы — и всё прошло как в сказке! Места были зарезервированы заранее, нас встретили с улыбками. Никакого стресса при регистрации. Буду рекомендовать всем подругам!
+              I flew to the Maldives with my husband—and it was like a fairytale! 
+              Our seats were reserved in advance, and we were greeted with smiles. 
+              No stress at check-in. I’ll be recommending it to all my friends!
             </p>
           </article>
 
@@ -127,7 +130,7 @@
                   <ellipse cx="20" cy="35" rx="12" ry="8" fill="rgb(241 220 205)"/>
                 </svg>
               </div>
-              <span class="review-card__name">Маша</span>
+              <span class="review-card__name">Masha</span>
             </div>
             <div class="review-card__rating">
               <div class="review-card__stars" aria-hidden="true">
@@ -140,7 +143,9 @@
               <span class="review-card__score">5/5</span>
             </div>
             <p class="review-card__text">
-              Летела первый раз одна в Барселону и очень боялась. Благодаря Natalia's Birds всё оказалось элементарным: билет, место, посадочный — всё было готово. Чувствовала себя как VIP-пассажир!
+              It was my first time flying alone to Barcelona, and I was really nervous. 
+              Thanks to Natalia's Birds, everything was a breeze: ticket, seat, boarding 
+              pass—everything was ready. I felt like a VIP passenger!
             </p>
           </article>
 
@@ -154,7 +159,7 @@
                   <ellipse cx="20" cy="35" rx="12" ry="8" fill="rgb(241 220 205)"/>
                 </svg>
               </div>
-              <span class="review-card__name">Даша</span>
+              <span class="review-card__name">Dasha</span>
             </div>
             <div class="review-card__rating">
               <div class="review-card__stars" aria-hidden="true">
@@ -167,7 +172,10 @@
               <span class="review-card__score">5/5</span>
             </div>
             <p class="review-card__text">
-              Компания Natalia's Birds — это находка! Летели компанией в Дубай, и ни один из нас не остался без места. Все рейсы, все пересадки — под контролем. Отдельное спасибо за внимательность и заботу!
+              Natalia's Birds is a real gem! We flew to Dubai as a group, 
+              and not a single one of us was left without a seat. Every flight, 
+              every transfer—completely under control. 
+              Special thanks for the care and attention!
             </p>
           </article>
 
@@ -181,7 +189,7 @@
         </div>
       </div>
 
-      <button class="btn btn--outline" id="openReviewModal" aria-label="Leave a review">Оставить отзыв</button>
+      <button class="btn btn--outline" id="openReviewModal" aria-label="Leave a review">Leave a review</button>
     </section>
 
   </main>
@@ -219,35 +227,35 @@
     <div class="modal" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="reviewModalTitle">
       <button class="modal__close" id="reviewModalClose" aria-label="Закрыть">&times;</button>
       <div class="modal__body">
-        <h2 class="modal__title" id="reviewModalTitle">Оставить отзыв</h2>
+        <h2 class="modal__title" id="reviewModalTitle">Leave a review</h2>
         <form class="review-form" id="reviewForm" novalidate>
 
           <div class="review-form__field">
-            <label class="review-form__label" for="reviewName">Ваше имя</label>
-            <input class="review-form__input" id="reviewName" type="text" placeholder="Как вас зовут?" required />
+            <label class="review-form__label" for="reviewName">Your name</label>
+            <input class="review-form__input" id="reviewName" type="text" placeholder="What is your name?" required />
           </div>
 
           <div class="review-form__field">
-            <label class="review-form__label">Оценка</label>
-            <div class="review-form__stars" id="reviewStars" role="group" aria-label="Выберите оценку от 1 до 5"></div>
+            <label class="review-form__label">Estimation</label>
+            <div class="review-form__stars" id="reviewStars" role="group" aria-label="Choose the estimation from 1 to 5"></div>
           </div>
 
           <div class="review-form__field">
-            <label class="review-form__label" for="reviewText">Текст отзыва</label>
-            <textarea class="review-form__textarea" id="reviewText" rows="4" placeholder="Расскажите о вашем опыте..." required></textarea>
+            <label class="review-form__label" for="reviewText">Text</label>
+            <textarea class="review-form__textarea" id="reviewText" rows="4" placeholder="Tell us about your experience…" required></textarea>
           </div>
 
           <div class="review-form__field">
-            <label class="review-form__label" for="reviewRecommend">Посоветуете наш сервис друзьям?</label>
+            <label class="review-form__label" for="reviewRecommend">Would you recommend our service to your friends?</label>
             <select class="review-form__select" id="reviewRecommend" required>
-              <option value="">— выберите —</option>
-              <option value="yes">Да, обязательно!</option>
-              <option value="no">Нет</option>
+              <option value="">— choose —</option>
+              <option value="yes">Yes!</option>
+              <option value="no">No</option>
             </select>
           </div>
 
           <p class="review-form__error" id="reviewFormError" role="alert"></p>
-          <button class="btn btn--primary review-form__submit" type="submit">Отправить отзыв</button>
+          <button class="btn btn--primary review-form__submit" type="submit">Submit a review</button>
         </form>
       </div>
     </div>

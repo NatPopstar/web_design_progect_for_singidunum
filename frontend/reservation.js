@@ -28,65 +28,65 @@
 /** @type {Country[]} */
 const DESTINATIONS = [
   {
-    name: 'США',
+    name: 'USA',
     cities: [
-      { name: 'Нью-Йорк',     airline: 'Air Serbia + Delta Air Lines',    price: 620 },
-      { name: 'Лос-Анджелес', airline: 'Air Serbia + United Airlines',     price: 680 },
-      { name: 'Майами',       airline: 'Turkish Airlines + American',      price: 710 },
-      { name: 'Чикаго',       airline: 'Lufthansa + United Airlines',      price: 590 },
+      { name: 'New York',     airline: 'Air Serbia + Delta Air Lines',    price: 620 },
+      { name: 'Los Angeles', airline: 'Air Serbia + United Airlines',     price: 680 },
+      { name: 'Miami',       airline: 'Turkish Airlines + American',      price: 710 },
+      { name: 'Chicago',       airline: 'Lufthansa + United Airlines',      price: 590 },
     ],
   },
   {
-    name: 'Канада',
+    name: 'Canada',
     cities: [
-      { name: 'Торонто',  airline: 'Air Serbia + Air Canada',  price: 540 },
+      { name: 'Toronto',  airline: 'Air Serbia + Air Canada',  price: 540 },
       { name: 'Ванкувер', airline: 'Lufthansa + Air Canada',   price: 610 },
       { name: 'Монреаль', airline: 'Air France + Air Canada',  price: 520 },
     ],
   },
   {
-    name: 'Ирландия',
+    name: 'Ireland',
     cities: [
-      { name: 'Дублин',  airline: 'Ryanair',                 price: 180 },
+      { name: 'Dublin',  airline: 'Ryanair',                 price: 180 },
       { name: 'Корк',    airline: 'Aer Lingus',              price: 195 },
       { name: 'Шеннон',  airline: 'Ryanair',                 price: 175 },
     ],
   },
   {
-    name: 'Англия',
+    name: 'England',
     cities: [
-      { name: 'Лондон',    airline: 'Air Serbia + British Airways', price: 210 },
+      { name: 'London',    airline: 'Air Serbia + British Airways', price: 210 },
       { name: 'Манчестер', airline: 'Wizz Air',                     price: 185 },
     ],
   },
   {
-    name: 'Австралия',
+    name: 'Australia',
     cities: [
-      { name: 'Сидней',   airline: 'Emirates + Qantas',       price: 1100 },
+      { name: 'Sydnei',   airline: 'Emirates + Qantas',       price: 1100 },
       { name: 'Мельбурн', airline: 'Singapore Airlines + Qantas', price: 1150 },
     ],
   },
   {
-    name: 'Новая Зеландия',
+    name: 'New Zeland',
     cities: [
-      { name: 'Окленд',     airline: 'Singapore Airlines + Air NZ', price: 1250 },
+      { name: 'Okland',     airline: 'Singapore Airlines + Air NZ', price: 1250 },
       { name: 'Веллингтон', airline: 'Emirates + Air NZ',           price: 1280 },
     ],
   },
   {
-    name: 'Мальта',
+    name: 'Malta',
     cities: [
       { name: 'Валлетта', airline: 'Ryanair', price: 145 },
     ],
   },
   {
-    name: 'Сингапур',
+    name: 'Singapore',
     cities: [
       { name: 'Сингапур', airline: 'Singapore Airlines', price: 760 },
     ],
   },
   {
-    name: 'Шотландия',
+    name: 'Scotland',
     cities: [
       { name: 'Эдинбург',  airline: 'Wizz Air',   price: 190 },
       { name: 'Глазго',    airline: 'Ryanair',     price: 175 },
@@ -355,19 +355,19 @@ function renderPassengerForms() {
       </h3>
       <div class="passenger-block__grid">
         <div class="res-field">
-          <label class="res-field__label" for="p${i}firstName">Имя</label>
-          <input class="res-field__input" id="p${i}firstName" type="text" placeholder="Имя" required />
+          <label class="res-field__label" for="p${i}firstName">Name</label>
+          <input class="res-field__input" id="p${i}firstName" type="text" placeholder="Name" required />
         </div>
         <div class="res-field">
-          <label class="res-field__label" for="p${i}lastName">Фамилия</label>
-          <input class="res-field__input" id="p${i}lastName" type="text" placeholder="Фамилия" required />
+          <label class="res-field__label" for="p${i}lastName">Surname</label>
+          <input class="res-field__input" id="p${i}lastName" type="text" placeholder="Surname" required />
         </div>
         <div class="res-field">
-          <label class="res-field__label" for="p${i}passport">Номер паспорта</label>
+          <label class="res-field__label" for="p${i}passport">Passport #</label>
           <input class="res-field__input" id="p${i}passport" type="text" placeholder="AB 1234567" required />
         </div>
         <div class="res-field">
-          <label class="res-field__label" for="p${i}dob">Дата рождения</label>
+          <label class="res-field__label" for="p${i}dob">Date of birth</label>
           <input class="res-field__input" id="p${i}dob" type="date" required />
         </div>
       </div>
@@ -423,27 +423,27 @@ function renderBookingSummary() {
 
   container.innerHTML = `
     <div class="booking-summary__row">
-      <span>Направление</span>
+      <span>Destination</span>
       <span>${escapeHtml(state.country.name)} — ${escapeHtml(state.city.name)}</span>
     </div>
     <div class="booking-summary__row">
-      <span>Авиакомпания</span>
+      <span>Airline</span>
       <span>${escapeHtml(state.city.airline)}</span>
     </div>
     <div class="booking-summary__row">
-      <span>Места</span>
+      <span>Spots</span>
       <span>${state.selectedSeats.sort().join(', ')}</span>
     </div>
     <div class="booking-summary__row">
-      <span>Пассажиров</span>
+      <span>Passengers</span>
       <span>${count}</span>
     </div>
     <div class="booking-summary__row">
-      <span>Цена за место</span>
+      <span>Price per spot</span>
       <span>${unitPrice} EUR</span>
     </div>
     <div class="booking-summary__row">
-      <span>Итого</span>
+      <span>Total</span>
       <span>${total} EUR</span>
     </div>
   `;
@@ -476,13 +476,13 @@ function showConfirmation() {
     const seats     = state.selectedSeats.sort().join(', ');
     const method    = escapeHtml(state.paymentMethod ?? '');
     el.innerHTML = `
-      Дорогой(-ая) <strong>${firstName}</strong>!<br/>
-      Ваш запрос на резервирование мест <strong>${seats}</strong>
-      рейсом <strong>${escapeHtml(state.city.airline)}</strong>
-      до <strong>${escapeHtml(state.city.name)}, ${escapeHtml(state.country.name)}</strong>
-      принят.<br/>
-      Способ оплаты: <strong>${method}</strong>.<br/><br/>
-      Наш менеджер свяжется с вами в ближайшее время для подтверждения.
+      Dear <strong>${firstName}</strong>!<br/>
+      Your request to reserve seats <strong>${seats}</strong>
+      on flight <strong>${escapeHtml(state.city.airline)}</strong>
+      to <strong>${escapeHtml(state.city.name)}, ${escapeHtml(state.country.name)}</strong>
+      has been received.<br/>
+      Payment method: <strong>${method}</strong>.<br/><br/>
+      Our manager will contact you shortly to confirm.
     `;
   }
   showStep('confirmation');

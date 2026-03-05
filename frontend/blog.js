@@ -21,11 +21,11 @@ const ADMIN_SESSION_KEY = 'natalias_birds_admin';
 const ADMIN_PASSWORD = 'admin123';
 
 const MONTH_NAMES_RU = [
-  'Январь','Февраль','Март','Апрель','Май','Июнь',
-  'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',
+  'January','February','March','April','May','June',
+  'July','August','September','October','November','December',
 ];
 
-const DAY_NAMES_SHORT = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+const DAY_NAMES_SHORT = ['Mo','Tu','We','Th','Fr','Sa','Su'];
 
 const EXCERPT_LENGTH = 220;
 
@@ -267,7 +267,7 @@ function renderBlogFeed(containerId, articles) {
   const container = document.getElementById(containerId);
   if (!container) return;
   if (!articles.length) {
-    container.innerHTML = '<p class="blog-feed__empty">Статей пока нет. Будьте первым!</p>';
+    container.innerHTML = '<p class="blog-feed__empty">No articles yet. Be the first!</p>';
     return;
   }
   container.innerHTML = articles.map(buildArticleCardHTML).join('');
@@ -295,7 +295,7 @@ function buildArticleCardHTML(article) {
             <div class="rating-display__stars">${buildStarsHTML(avgRating, 5)}</div>
             <span>${ratingCount ? avgRating.toFixed(1) + ' / 5' : 'нет оценок'}</span>
           </div>
-          <a class="btn btn--primary" href="blog-article.html?id=${article.id}">Далее &rarr;</a>
+          <a class="btn btn--primary" href="blog-article.html?id=${article.id}">Next &rarr;</a>
         </div>
       </div>
     </article>
@@ -380,14 +380,14 @@ function showSubmitSuccess() {
   const el = document.getElementById('postFormError');
   if (!el) return;
   el.style.color = 'var(--clr-plum)';
-  el.textContent = '✓ Статья отправлена на модерацию. Спасибо!';
+  el.textContent = '✓ The article has been submitted for moderation. Thank you!';
   setTimeout(() => { el.textContent = ''; el.style.color = ''; }, 4000);
 }
 
 function validatePostForm({ title, body, author }) {
-  if (!title)  return 'Пожалуйста, укажите заголовок статьи.';
-  if (!body)   return 'Пожалуйста, напишите текст статьи.';
-  if (!author) return 'Пожалуйста, укажите ваше имя или никнейм.';
+  if (!title)  return 'Please provide the article title.';
+  if (!body)   return 'Please write the article text.';
+  if (!author) return 'Please provide your name or nickname.';
   return null;
 }
 
@@ -409,8 +409,8 @@ function initAdminWidget(containerId) {
   if (AdminSession.isActive()) {
     container.innerHTML = `
       <div class="admin-widget admin-widget--active">
-        <span class="admin-widget__badge">👑 Режим администратора</span>
-        <button class="btn btn--outline admin-widget__logout" id="adminLogout">Выйти</button>
+        <span class="admin-widget__badge">👑 Administration </span>
+        <button class="btn btn--outline admin-widget__logout" id="adminLogout">Exit</button>
       </div>
     `;
     document.getElementById('adminLogout')?.addEventListener('click', () => {
@@ -420,17 +420,17 @@ function initAdminWidget(containerId) {
   } else {
     container.innerHTML = `
       <div class="admin-widget">
-        <button class="admin-widget__login-btn" id="adminLoginToggle">🔐 Войти как администратор</button>
+        <button class="admin-widget__login-btn" id="adminLoginToggle">🔐 Sign in like an administrator</button>
         <form class="admin-widget__form" id="adminLoginForm" style="display:none;" novalidate>
           <input
             class="post-form__input"
             id="adminPassword"
             type="password"
-            placeholder="Введите пароль"
+            placeholder="Enter your password."
             autocomplete="current-password"
           />
           <p class="post-form__error" id="adminLoginError" role="alert"></p>
-          <button class="btn btn--primary" type="submit">Войти</button>
+          <button class="btn btn--primary" type="submit">Sign in</button>
         </form>
       </div>
     `;
@@ -449,7 +449,7 @@ function initAdminWidget(containerId) {
       if (AdminSession.login(pw)) {
         location.reload();
       } else {
-        if (errorEl) errorEl.textContent = 'Неверный пароль.';
+        if (errorEl) errorEl.textContent = 'Error password';
       }
     });
   }
@@ -469,8 +469,8 @@ function renderAdminPanel(containerId) {
   if (!total) {
     container.innerHTML = `
       <div class="admin-panel">
-        <h2 class="admin-panel__heading">Модерация</h2>
-        <p class="admin-panel__empty">Нет материалов, ожидающих проверки.</p>
+        <h2 class="admin-panel__heading">Moderation</h2>
+        <p class="admin-panel__empty">No materials</p>
       </div>
     `;
     return;
@@ -479,7 +479,7 @@ function renderAdminPanel(containerId) {
   container.innerHTML = `
     <div class="admin-panel">
       <h2 class="admin-panel__heading">
-        Модерация
+        Moderation
         <span class="admin-panel__count">${total}</span>
       </h2>
 
@@ -492,7 +492,7 @@ function renderAdminPanel(containerId) {
           aria-selected="true"
           aria-controls="panelArticles"
         >
-          Статьи
+          Articles
           ${pendingArticles.length ? `<span class="admin-panel__count">${pendingArticles.length}</span>` : ''}
         </button>
         <button
@@ -502,7 +502,7 @@ function renderAdminPanel(containerId) {
           aria-selected="false"
           aria-controls="panelReviews"
         >
-          Отзывы
+          Review
           ${pendingReviews.length ? `<span class="admin-panel__count admin-panel__count--review">${pendingReviews.length}</span>` : ''}
         </button>
       </div>
@@ -511,14 +511,14 @@ function renderAdminPanel(containerId) {
       <div class="admin-panel__list" id="panelArticles" role="tabpanel" aria-labelledby="tabArticles">
         ${pendingArticles.length
           ? pendingArticles.map(buildPendingCardHTML).join('')
-          : '<p class="admin-panel__empty">Нет статей на проверке.</p>'}
+          : '<p class="admin-panel__empty">No articles </p>'}
       </div>
 
       <!-- Reviews panel -->
       <div class="admin-panel__list" id="panelReviews" role="tabpanel" aria-labelledby="tabReviews" style="display:none;">
         ${pendingReviews.length
           ? pendingReviews.map(buildPendingReviewHTML).join('')
-          : '<p class="admin-panel__empty">Нет отзывов на проверке.</p>'}
+          : '<p class="admin-panel__empty">No reviews</p>'}
       </div>
     </div>
   `;
@@ -552,8 +552,8 @@ function renderAdminPanel(containerId) {
 
   container.querySelectorAll('[data-reject]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const label = btn.closest('.pending-review-card') ? 'отзыв' : 'статью';
-      if (confirm(`Удалить ${label} безвозвратно?`)) {
+      const label = btn.closest('.pending-review-card') ? 'review' : 'article';
+      if (confirm(`Delete ${label} irrevocably?`)) {
         BlogStore.reject(btn.dataset.reject);
         refreshBlogPage();
       }

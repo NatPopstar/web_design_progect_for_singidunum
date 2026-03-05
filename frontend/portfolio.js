@@ -18,9 +18,9 @@
 const DESTINATIONS = [
   {
     id: 'usa',
-    title: 'США',
+    title: 'USA',
     description:
-      'США — огромная страна с невероятным разнообразием ландшафтов: от каньонов Аризоны до пляжей Флориды. Natalia\'s Birds сотрудничает с ведущими американскими перевозчиками и гарантирует вам место на борту по любому из популярных маршрутов.',
+      'The USA is a vast country with an incredible variety of landscapes, from the canyons of Arizona to the beaches of Florida. Natalia\'s Birds partners with leading American carriers and guarantees you a seat on any of the popular routes.',
     cities: [
       { name: 'Нью-Йорк',    airport: 'JFK — John F. Kennedy International' },
       { name: 'Лос-Анджелес', airport: 'LAX — Los Angeles International' },

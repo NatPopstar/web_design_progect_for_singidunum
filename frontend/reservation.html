@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Natalia's Birds — Резервирование билетов</title>
+  <title>Natalia's Birds — Reservation tickets</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -31,8 +31,8 @@
       </ul>
     </nav>
     <div class="page-header__text">
-      <h1 class="page-header__title">Резервирование билетов</h1>
-      <p class="page-header__subtitle">Выберите направление, место в самолёте и заполните данные — мы гарантируем ваше место на борту.</p>
+      <h1 class="page-header__title">Reservation tickets</h1>
+      <p class="page-header__subtitle">Choose your destination, select your seat, and enter your details — we guarantee your spot on board.</p>
     </div>
   </header>
 
@@ -42,97 +42,97 @@
     <div class="progress-bar" aria-label="Шаги оформления">
       <div class="progress-bar__step progress-bar__step--active" data-step="1">
         <div class="progress-bar__dot">1</div>
-        <span class="progress-bar__label">Направление</span>
+        <span class="progress-bar__label">Direction</span>
       </div>
       <div class="progress-bar__line"></div>
       <div class="progress-bar__step" data-step="2">
         <div class="progress-bar__dot">2</div>
-        <span class="progress-bar__label">Места</span>
+        <span class="progress-bar__label">Spot</span>
       </div>
       <div class="progress-bar__line"></div>
       <div class="progress-bar__step" data-step="3">
         <div class="progress-bar__dot">3</div>
-        <span class="progress-bar__label">Пассажиры</span>
+        <span class="progress-bar__label">Passengers</span>
       </div>
       <div class="progress-bar__line"></div>
       <div class="progress-bar__step" data-step="4">
         <div class="progress-bar__dot">4</div>
-        <span class="progress-bar__label">Оплата</span>
+        <span class="progress-bar__label">Payment</span>
       </div>
     </div>
 
     <!-- Step 1 -->
     <section class="res-step" id="step1" aria-label="Шаг 1: Выбор направления">
-      <h2 class="res-step__heading">Куда летим?</h2>
+      <h2 class="res-step__heading">Where we flying?</h2>
 
       <div class="res-step__fields">
         <div class="res-field">
-          <label class="res-field__label" for="selectCountry">Страна назначения</label>
+          <label class="res-field__label" for="selectCountry">Destination country</label>
           <select class="res-field__select" id="selectCountry">
-            <option value="">— выберите страну —</option>
+            <option value="">— choose a country —</option>
           </select>
         </div>
 
         <div class="res-field" id="cityFieldWrapper" style="display:none;">
-          <label class="res-field__label" for="selectCity">Город</label>
+          <label class="res-field__label" for="selectCity">Town</label>
           <select class="res-field__select" id="selectCity">
-            <option value="">— выберите город —</option>
+            <option value="">— choose a city —</option>
           </select>
         </div>
 
         <div class="airline-card" id="airlineCard" style="display:none;" aria-live="polite">
           <span class="airline-card__icon" aria-hidden="true">✈️</span>
           <div class="airline-card__info">
-            <p class="airline-card__label">Авиакомпания</p>
+            <p class="airline-card__label">Airline</p>
             <p class="airline-card__name" id="airlineName"></p>
           </div>
         </div>
       </div>
 
       <div class="res-step__nav">
-        <button class="btn btn--primary" id="step1Next" disabled>Далее →</button>
+        <button class="btn btn--primary" id="step1Next" disabled>Next →</button>
       </div>
     </section>
 
     <!-- Step 2 -->
     <section class="res-step" id="step2" style="display:none;" aria-label="Шаг 2: Выбор мест">
-      <h2 class="res-step__heading">Выберите места</h2>
+      <h2 class="res-step__heading">Chose a place</h2>
       <p class="res-step__hint">
-        Зелёные места — доступны для резервирования. Серые — заняты.
-        Нажмите, чтобы выбрать (можно несколько).
+        Green seats — available for booking. Gray seats — taken.
+        Click to select (multiple selections allowed).
       </p>
 
       <div class="seatmap-wrapper">
         <div class="seatmap" id="seatMap" role="group" aria-label="Карта самолёта"></div>
         <div class="seatmap-legend">
-          <span class="seatmap-legend__item seatmap-legend__item--available">Доступно</span>
-          <span class="seatmap-legend__item seatmap-legend__item--selected">Выбрано</span>
-          <span class="seatmap-legend__item seatmap-legend__item--taken">Занято</span>
-          <span class="seatmap-legend__item seatmap-legend__item--ours">Наши места</span>
+          <span class="seatmap-legend__item seatmap-legend__item--available">Available</span>
+          <span class="seatmap-legend__item seatmap-legend__item--selected">Selected</span>
+          <span class="seatmap-legend__item seatmap-legend__item--taken">Occupied</span>
+          <span class="seatmap-legend__item seatmap-legend__item--ours">Our seats</span>
         </div>
       </div>
 
       <p class="selected-seats-summary" id="selectedSeatsSummary" aria-live="polite"></p>
 
       <div class="res-step__nav">
-        <button class="btn btn--outline" id="step2Back">← Назад</button>
-        <button class="btn btn--primary" id="step2Next" disabled>Далее →</button>
+        <button class="btn btn--outline" id="step2Back">← Back</button>
+        <button class="btn btn--primary" id="step2Next" disabled>Next →</button>
       </div>
     </section>
 
     <!-- Step 3 -->
     <section class="res-step" id="step3" style="display:none;" aria-label="Шаг 3: Данные пассажиров">
-      <h2 class="res-step__heading">Данные пассажиров</h2>
+      <h2 class="res-step__heading">Passenger details</h2>
       <div id="passengerForms"></div>
       <div class="res-step__nav">
-        <button class="btn btn--outline" id="step3Back">← Назад</button>
-        <button class="btn btn--primary" id="step3Next">Далее →</button>
+        <button class="btn btn--outline" id="step3Back">← Back</button>
+        <button class="btn btn--primary" id="step3Next">Next →</button>
       </div>
     </section>
 
     <!-- Step 4 -->
     <section class="res-step" id="step4" style="display:none;" aria-label="Шаг 4: Способ оплаты">
-      <h2 class="res-step__heading">Способ оплаты</h2>
+      <h2 class="res-step__heading">Payment method</h2>
 
       <div class="payment-methods" id="paymentMethods" role="group" aria-label="Выбор способа оплаты">
         <label class="payment-card" data-method="raiffeisen">
@@ -161,17 +161,17 @@
       <div class="booking-summary" id="bookingSummary" aria-label="Итого бронирования"></div>
 
       <div class="res-step__nav">
-        <button class="btn btn--outline" id="step4Back">← Назад</button>
-        <button class="btn btn--primary" id="reserveBtn" disabled>Зарезервировать ✓</button>
+        <button class="btn btn--outline" id="step4Back">← Back</button>
+        <button class="btn btn--primary" id="reserveBtn" disabled>Reserve ✓</button>
       </div>
     </section>
 
     <!-- Confirmation -->
-    <section class="res-step confirmation" id="confirmation" style="display:none;" aria-label="Подтверждение">
+    <section class="res-step confirmation" id="confirmation" style="display:none;" aria-label="Confirmation">
       <div class="confirmation__icon" aria-hidden="true">🎉</div>
-      <h2 class="confirmation__heading">Резервирование оформлено!</h2>
+      <h2 class="confirmation__heading">Reservation completed!</h2>
       <p class="confirmation__text" id="confirmationText"></p>
-      <a class="btn btn--primary" href="index.html">На главную</a>
+      <a class="btn btn--primary" href="index.html">Back to Home</a>
     </section>
 
   </main>

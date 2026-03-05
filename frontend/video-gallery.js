@@ -19,9 +19,9 @@
 const VIDEOS = [
   {
     id: 'usa',
-    title: 'США',
+    title: 'USA',
     description:
-      'Наш клиент Михаил летел в США через Нью-Йорк и решил проехать по Западному побережью: Лос-Анджелес, Гранд-Каньон, Лас-Вегас. Он снял это путешествие на камеру — смотрите, как выглядит настоящая Америка глазами туриста из Белграда.',
+      'Our client, Mikhail, flew to the USA via New York and decided to explore the West Coast: Los Angeles, the Grand Canyon, and Las Vegas. He captured this journey on camera — see what real America looks like through the eyes of a traveler from Belgrade.',
     embedUrl: 'https://www.youtube.com/embed/oNIMjCzM0WU',
   },
   {
